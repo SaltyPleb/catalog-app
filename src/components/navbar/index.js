@@ -5,7 +5,7 @@ import {
   Bars,
   NavMenu,
   NavBtn,
-  NavBtnLink,
+  NavBtnLink
 } from "./NavbarElements.js";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
           />
           <h1 className="nav-name">Salty Salty app</h1>
         </NavLink>
-        <Bars />
+          <Bars />
         <NavMenu>
           <NavLink to="/about" activeStyle>
             About
