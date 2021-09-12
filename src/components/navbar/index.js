@@ -13,8 +13,8 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to="/">
-          <h1 className="nav-name">logo</h1>
-          <h1 className="nav-name">Name</h1>
+          <img src="https://www.freepnglogos.com/uploads/2021-png/hd-free-2021-transparent-new-year-png-images-0.png" width="50" alt="hd free 2021 transparent new year png images" />
+          <h1 className="nav-name">Salty Salty app</h1>
         </NavLink>
         <Bars />
         <NavMenu>
