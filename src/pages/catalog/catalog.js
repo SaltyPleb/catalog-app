@@ -1,23 +1,32 @@
 import React, { Component } from "react";
 import "./catalog.css";
-import Card from './card.js';
-const data = [
-  { name: "qwe", language: "ahsd", job: "ads" },
-  { name: "tyu", language: "hgf", job: "kjh" },
-  { name: "khj", language: "nm", job: "ads" },
-  { name: "khj", language: "nm", job: "ads" },
-  { name: "khj", language: "nm", job: "ads" },
-  { name: "khj", language: "nm", job: "ads" },
-  { name: "khj", language: "nm", job: "ads" },
-];
+import Card from "./card.js";
 
-const postCards = data.map((post, key) => <Card key={key} name={post.name} content={post.content}/>)
+// const postCards = data.map((post, key) => (
+//   <Card key={key} name={post.name} content={post.content} />
+// ));
+
 class Catalog extends Component {
+  state = { data: [] };
+
+  async componentDidMount() {
+    const response = await fetch(
+      "http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}"
+    );
+    const data = await response.json();
+
+    console.log(data);
+
+    this.setState({data: data});
+  }
+
   render() {
     return (
       <div>
         <div class="grid">
-          {postCards}
+          {this.state.data.map((card, key) => (
+            <Card key={key}/>
+          ))}
         </div>
 
         <template id="card-template">
