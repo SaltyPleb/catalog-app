@@ -5,15 +5,19 @@ const data = [
   { name: "qwe", language: "ahsd", job: "ads" },
   { name: "tyu", language: "hgf", job: "kjh" },
   { name: "khj", language: "nm", job: "ads" },
+  { name: "khj", language: "nm", job: "ads" },
+  { name: "khj", language: "nm", job: "ads" },
+  { name: "khj", language: "nm", job: "ads" },
+  { name: "khj", language: "nm", job: "ads" },
 ];
+
+const postCards = data.map((post, key) => <Card key={key} name={post.name} content={post.content}/>)
 class Catalog extends Component {
   render() {
     return (
       <div>
         <div class="grid">
-          <Card name="qwe" language="asd" job="ds"/>
-          <Card name="qwe" language="asd" job="ds"/>
-          <Card name="qwe" language="asd" job="ds"/>
+          {postCards}
         </div>
 
         <template id="card-template">
