@@ -1,0 +1,2 @@
+- https://www.flaticon.com/
+- https://www.flaticon.com/search?word=component&license=all&style=all&order_by=4&type=icon
