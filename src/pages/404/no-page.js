@@ -24,7 +24,17 @@ class nopage extends Component {
     // const data = await response.json();
     // console.log(data.image_original_url)
     // this.setState({ link: data.image_original_url })
-  }
+
+      //test this later
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://reqres.in/api/products/3", true);
+    xhr.onload = function () {
+      console.log(xhr.responseText);
+    };
+    xhr.send();
+  
+
+}
 
   render() {
     return (
@@ -40,7 +50,7 @@ class nopage extends Component {
             style={{
               justifyContent: "center",
               alignItems: "center",
-              height: "90vh"
+              height: "90vh",
             }}
           >
             <h1
@@ -49,7 +59,6 @@ class nopage extends Component {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                
               }}
             >
               404
