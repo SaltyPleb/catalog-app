@@ -3,7 +3,8 @@ import Catalog from "../../pages/catalog/catalog";
 import Contact from "../../pages/contact/contact-me";
 import Signin from "../../pages/sign-in/sing-in";
 import Signup from "../../pages/sign-up/signup";
-import { ABOUT_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
+import Main from "../../pages/";
+import { ABOUT_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
 
 export const authRoutes = [
     
@@ -29,5 +30,9 @@ export const publicRoutes = [
     {
         path: SIGNIN_ROUTE,
         Component: Signin
+    },
+    {
+        path: MAIN_ROUTE,
+        Component: Main
     }
 ];

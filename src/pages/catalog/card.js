@@ -1,20 +1,21 @@
 import React from "react";
 
-export default function Card(props) {
+export default function Card(key) {
+  //console.log(key);
   return (
-    <div class="card">
-      <div class="header">
-        <img class="header-img skeleton" />
-        <div class="title" data-title>
-          <div class="skeleton skeleton-text"></div>
-          <div class="skeleton skeleton-text"></div>
+    <div className="card">
+      <div className="header">
+        <img className="header-img skeleton" />
+        <div className="title" data-title>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
         </div>
       </div>
       <div data-body>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text"></div>
       </div>
     </div>
   );

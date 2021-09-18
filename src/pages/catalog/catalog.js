@@ -17,35 +17,33 @@ class Catalog extends Component {
 
     console.log(data);
 
-    this.setState({data: data});
+    this.setState({ data: data });
   }
 
   render() {
     return (
-      <div>
-        <div class="grid">
-          {this.state.data.map((card, key) => (
-            <Card key={key}/>
-          ))}
-        </div>
-
-        <template id="card-template">
-          <div class="card">
-            <div class="header">
-              <img class="header-img skeleton" />
-              <div class="title" data-title>
-                <div class="skeleton skeleton-text"></div>
-                <div class="skeleton skeleton-text"></div>
+      <div className="main_grid">
+        <div className="middle_grid">
+          <div className="grid_leftcolumn">
+            <div className="filter_wrapper">
+              <div className="sheema_filter">
+                <div className="">Каталог</div>
+                <div className="">мобильное приложение</div>
+                <div className="">мобильное приложение</div>
+                <div className="">мобильное приложение</div>
+                <div className="">мобильное приложение</div>
               </div>
             </div>
-            <div data-body>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text"></div>
-            </div>
           </div>
-        </template>
+          <div className="right_grid">
+            <div className="grid">
+            {this.state.data.map(() => (
+              <Card key={null} />
+            ))}
+          </div>
+          </div>
+          
+        </div>
       </div>
     );
   }
