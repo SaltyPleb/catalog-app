@@ -8,19 +8,21 @@ import Contact from './pages/contact/contact-me.js';
 import Catalog from './pages/catalog/catalog.js';
 import Signin from './pages/sign-in/sing-in';
 import Signup from './pages/sign-up/signup.js';
+import AppRouter from './components/routes/AppRouter';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
+      <AppRouter />
+      {/* <Switch>
         <Route path='/' exact component={Home}/>
         <Route path='/about' exact component={About}/>
         <Route path='/contact-me' exact component={Contact}/>
         <Route path='/catalog' exact component={Catalog}/>
         <Route path='/sign-in' exact component={Signin}/>
         <Route path='/sign-up' exact component={Signup}/>
-      </Switch>
+      </Switch> */}
     </Router>
   );
 }
