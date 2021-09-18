@@ -28,6 +28,8 @@ export const NavLink = styled(Link)`
 
 
 export const Bars = styled(FaBars)`
+  margin-top: 3vh;
+  margin-right: 3vh;
   display: none;
   color: #fff;
   @media screen and (max-width: 768px) {
