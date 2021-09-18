@@ -8,12 +8,11 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements.js";
+import { observer } from "mobx-react-lite";
 
-const Navbar = () => {
+const Navbar = observer(() => {
   const { user } = useContext(Context);
-
   console.log(user);
-
   return (
     <>
       <Nav>
@@ -40,7 +39,13 @@ const Navbar = () => {
             <NavLink to="/contact-me" activeStyle>
               Contact us
             </NavLink>
-            <NavLink to="/sign-up" activeStyle>
+            <NavLink
+              to="/"
+              activeStyle
+              onClick={() => {
+                user.setIsAuth(false);
+              }}
+            >
               Log Out
             </NavLink>{" "}
           </NavMenu>
@@ -75,6 +80,6 @@ const Navbar = () => {
       </Nav>
     </>
   );
-};
+});
 
 export default Navbar;
