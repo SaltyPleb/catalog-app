@@ -10,7 +10,7 @@ import {
 } from "./NavbarElements.js";
 
 const Navbar = () => {
-  const {user} = useContext(Context)
+  const { user } = useContext(Context);
 
   console.log(user);
 
@@ -28,42 +28,47 @@ const Navbar = () => {
           <h1 className="nav-name">Salty Salty app</h1>
         </NavLink>
         <Bars />
-        
-          {user.isAuth ? (
-            <NavMenu>
-              <NavLink to="/about" activeStyle>
-                About
-              </NavLink>
-              <NavLink to="/catalog" activeStyle>
-                Catalog
-              </NavLink>
-              <NavLink to="/contact-me" activeStyle>
-                Contact us
-              </NavLink>
-              <NavLink to="/sign-up" activeStyle>
-                Log Out
-              </NavLink>{" "}
-            </NavMenu>
-          ) : (
-            <NavMenu>
-              <NavLink to="/about" activeStyle>
-                About
-              </NavLink>
-              <NavLink to="/catalog" activeStyle>
-                Catalog
-              </NavLink>
-              <NavLink to="/contact-me" activeStyle>
-                Contact us
-              </NavLink>
-              <NavLink to="/sign-up" activeStyle>
-                Sign up
-              </NavLink>{" "}
-              <NavBtnLink to="/sign-in" onClick={()=> {}}>Sign In</NavBtnLink>
-            </NavMenu>
-          )}
 
-          
-        
+        {user.isAuth ? (
+          <NavMenu>
+            <NavLink to="/about" activeStyle>
+              About
+            </NavLink>
+            <NavLink to="/catalog" activeStyle>
+              Catalog
+            </NavLink>
+            <NavLink to="/contact-me" activeStyle>
+              Contact us
+            </NavLink>
+            <NavLink to="/sign-up" activeStyle>
+              Log Out
+            </NavLink>{" "}
+          </NavMenu>
+        ) : (
+          <NavMenu>
+            <NavLink to="/about" activeStyle>
+              About
+            </NavLink>
+            <NavLink to="/catalog" activeStyle>
+              Catalog
+            </NavLink>
+            <NavLink to="/contact-me" activeStyle>
+              Contact us
+            </NavLink>
+            <NavLink to="/sign-up" activeStyle>
+              Sign up
+            </NavLink>{" "}
+            <NavBtnLink
+              to="/sign-in"
+              onClick={() => {
+                user.setIsAuth(true);
+              }}
+            >
+              Sign In
+            </NavBtnLink>
+          </NavMenu>
+        )}
+
         {/* <NavBtn>
           
         </NavBtn> */}
