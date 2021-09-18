@@ -14,7 +14,7 @@ const AppRouter = () => {
       {publicRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} component={Component} exact />
       ))}
-      <Route path='/404' exact component={nopage}/>
+      <Route path='*' exact component={nopage}/>
     </Switch>
   );
 };
