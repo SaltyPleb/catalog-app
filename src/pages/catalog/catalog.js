@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import "./catalog.css";
 import Card from "./card.js";
+import Loader from "../../components/loader/loader.js";
 
 // const postCards = data.map((post, key) => (
 //   <Card key={key} name={post.name} content={post.content} />
 // ));
 
 class Catalog extends Component {
-  state = { data: [] };
+  state = {
+    data: [],
+    isloading: true,
+  };
 
   async componentDidMount() {
     const response = await fetch(
@@ -17,33 +21,39 @@ class Catalog extends Component {
 
     console.log(data);
 
-    this.setState({ data: data });
+    this.setState({
+      data: data,
+      isloading: false,
+    });
   }
 
   render() {
     return (
       <div className="main_grid">
-        <div className="middle_grid">
-          <div className="grid_leftcolumn">
-            <div className="filter_wrapper">
-              <div className="sheema_filter">
-                <div className="">Каталог</div>
-                <div className="">мобильное приложение</div>
-                <div className="">мобильное приложение</div>
-                <div className="">мобильное приложение</div>
-                <div className="">мобильное приложение</div>
+          {this.state.isloading ? (
+            <Loader/>
+          ) : (
+            <div className="middle_grid">
+              <div className="grid_leftcolumn">
+                <div className="filter_wrapper">
+                  <div className="sheema_filter">
+                    <div className="">Каталог</div>
+                    <div className="">мобильное приложение</div>
+                    <div className="">мобильное приложение</div>
+                    <div className="">мобильное приложение</div>
+                    <div className="">мобильное приложение</div>
+                  </div>
+                </div>
+              </div>
+              <div className="right_grid">
+                <div className="grid">
+                  {this.state.data.map(() => (
+                    <Card key={null} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="right_grid">
-            <div className="grid">
-            {this.state.data.map(() => (
-              <Card key={null} />
-            ))}
-          </div>
-          </div>
-          
-        </div>
+          )}
       </div>
     );
   }
