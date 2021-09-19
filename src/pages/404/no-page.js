@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import Loader from "../../components/loader/loader.js";
 
 class nopage extends Component {
   state = {
     link: "",
+    isLoading: true,
   };
 
   async componentDidMount() {
@@ -18,6 +20,7 @@ class nopage extends Component {
       })
       .then((link) => {
         this.setState({ link: link });
+        this.setState({ isLoading: false });
       });
     console.log(this.state.link);
     // const response = await fetch("https://tv.giphy.com/v1/gifs/random?api_key=EdgHAspOU0eO4RRXbz215LSc9CYfjGWD&tag=cat");
@@ -25,16 +28,14 @@ class nopage extends Component {
     // console.log(data.image_original_url)
     // this.setState({ link: data.image_original_url })
 
-      //test this later
+    //test this later
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://reqres.in/api/products/3", true);
     xhr.onload = function () {
       console.log(xhr.responseText);
     };
     xhr.send();
-  
-
-}
+  }
 
   render() {
     return (
@@ -46,41 +47,45 @@ class nopage extends Component {
             textAlign: "center",
           }}
         >
-          <div
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              height: "90vh",
-            }}
-          >
-            <h1
+            {this.state.isLoading ? (
+              <Loader />
+            ) : (
+              <div 
               style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "90vh",
               }}
-            >
-              404
-            </h1>
-            <h1
-              style={{
-                display: "flex",
-                position: "absolute",
-                top: "45%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              Page Not Found
-            </h1>
-            <img
-              src={this.state.link}
-              style={{ width: "97%", height: "97%" }}
-            />
+              >
+                <img
+                  src={this.state.link}
+                  style={{ width: "97%", height: "97%" }}
+                />
+                <h1
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  404
+                </h1>
+                <h1
+                  style={{
+                    display: "flex",
+                    position: "absolute",
+                    top: "45%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  Page Not Found
+                </h1>
+              </div>
+            )}
           </div>
         </div>
-      </div>
     );
   }
 }
