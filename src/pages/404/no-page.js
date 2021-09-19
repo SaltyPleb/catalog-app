@@ -41,7 +41,7 @@ class nopage extends Component {
     return (
       <div>
         <div
-          class="nopage"
+          className="nopage"
           style={{
             margin: "5px",
             textAlign: "center",
@@ -60,6 +60,7 @@ class nopage extends Component {
                 <img
                   src={this.state.link}
                   style={{ width: "97%", height: "97%" }}
+                  alt=""
                 />
                 <h1
                   style={{

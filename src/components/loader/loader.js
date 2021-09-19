@@ -1,8 +1,9 @@
-import React from "react";
 import "./loader.css";
+import React from 'react'
 
-export default () => (
-  <div className="lds-roller">
+const loader = () => {
+  return (
+    <div className="lds-roller">
     <div></div>
     <div></div>
     <div></div>
@@ -12,4 +13,7 @@ export default () => (
     <div></div>
     <div></div>
   </div>
-);
+  )
+}
+
+export default loader

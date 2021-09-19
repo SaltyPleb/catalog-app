@@ -9,7 +9,7 @@ const Card = observer(() => {
       {device.types.map((type) => (
         <div className="card" key={type.id}>
           <div className="header">
-            <img className="header-img skeleton" />
+            <img className="header-img skeleton" alt=""/>
             <div className="title" data-title>
               <div className="skeleton skeleton-text"></div>
               <div className="skeleton skeleton-text"></div>

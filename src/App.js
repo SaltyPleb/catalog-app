@@ -2,12 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router , Switch, Route} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar';
-import Home from './pages/index.js';
-import About from './pages/about/about.js';
-import Contact from './pages/contact/contact-me.js';
-import Catalog from './pages/catalog/catalog.js';
-import Signin from './pages/sign-in/sing-in';
-import Signup from './pages/sign-up/signup.js';
 import AppRouter from './components/routes/AppRouter';
 
 function App() {
