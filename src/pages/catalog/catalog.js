@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./catalog.css";
 import Card from "./card.js";
 import Loader from "../../components/loader/loader.js";
+import Types from "./types.js";
 
 // const postCards = data.map((post, key) => (
 //   <Card key={key} name={post.name} content={post.content} />
@@ -72,11 +73,7 @@ class Catalog extends Component {
               <div className="grid_leftcolumn">
                 <div className="filter_wrapper">
                   <div className="sheema_filter">
-                    <div className="">Каталог</div>
-                    <div className="">мобильное приложение</div>
-                    <div className="">мобильное приложение</div>
-                    <div className="">мобильное приложение</div>
-                    <div className="">мобильное приложение</div>
+                    <Types/>
                   </div>
                 </div>
               </div>
