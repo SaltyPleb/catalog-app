@@ -11,8 +11,10 @@ class Catalog extends Component {
   state = {
     data: [],
     isloading: true,
+    value: '',
   };
 
+  
   async componentDidMount() {
     const response = await fetch(
       "http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}"
@@ -26,6 +28,19 @@ class Catalog extends Component {
       isloading: false,
     });
   }
+  onChange = (event) => {
+    this.setState({value: event.target.value})
+  }
+
+  onClear = () => {
+    this.setState({value: ""})
+  }
+
+  // onChange = () => {
+  //   this.setState(prevState => ({
+  //     value: !prevState.value,
+  //   }));
+  // }
 
   render() {
     return (
@@ -37,18 +52,14 @@ class Catalog extends Component {
             <div className="search__grid">
               <div className="search__bar">
                 <div className="search__bar-wrapper">
-                  <div className="closeModal"></div>
+                  <div className="closeModal" onClick={this.onClear}></div>
                   <div className="search__bar-suggest">
                     <input
-                      class="search__input"
+                      className="search__input"
                       type="text"
                       placeholder="Поиск"
-                      value=""
-                      tabindex="1"
-                      data-bind="hasFocus: $root.hasFocus,
-                              value: $root.keyword,
-                              valueUpdate: 'input',
-                              event: {keydown: function (data, event) {return $root.onKeyDown(event)}}"
+                      value={this.state.value} 
+                      onChange={this.onChange}
                     />
                   </div>
                 </div>
@@ -72,7 +83,7 @@ class Catalog extends Component {
               <div className="right_grid">
                 <div className="grid">
                   {this.state.data.map(() => (
-                    <Card key={null} />
+                    <Card key={this.state.data.id} />
                   ))}
                 </div>
               </div>
