@@ -6,9 +6,9 @@ const types = observer(() => {
   const { device } = useContext(Context)
   return (
     <div>
-      {device.types.map((type) => (
-        <div className="" key={type.id}>
-          {type.name}
+      {device.brands.map((brands) => (
+        <div className="" key={brands.id}>
+          {brands.name}
         </div>
       ))}
     </div>

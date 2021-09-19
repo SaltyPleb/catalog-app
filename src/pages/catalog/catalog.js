@@ -79,9 +79,9 @@ class Catalog extends Component {
               </div>
               <div className="right_grid">
                 <div className="grid">
-                  {this.state.data.map(() => (
-                    <Card key={this.state.data.id} />
-                  ))}
+                  {/* {this.state.data.map(() => ( */}
+                    <Card />
+                  {/* ))} */}
                 </div>
               </div>
             </div>

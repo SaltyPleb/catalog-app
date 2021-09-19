@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react-lite";
+import { Context } from "../..";
 
-export default function Card(key) {
-  //console.log(key);
+const Card = observer(() => {
+  const { device } = useContext(Context);
   return (
-    <div className="card">
-      <div className="header">
-        <img className="header-img skeleton" />
-        <div className="title" data-title>
-          <div className="skeleton skeleton-text"></div>
-          <div className="skeleton skeleton-text"></div>
+    <>
+      {device.types.map((type) => (
+        <div className="card" key={type.id}>
+          <div className="header">
+            <img className="header-img skeleton" />
+            <div className="title" data-title>
+              <div className="skeleton skeleton-text"></div>
+              <div className="skeleton skeleton-text"></div>
+            </div>
+          </div>
+          <div data-body>
+            <div className="skeleton skeleton-text"></div>
+            <div className="skeleton skeleton-text"></div>
+            <div className="skeleton skeleton-text"></div>
+            <div className="skeleton skeleton-text"></div>
+          </div>
         </div>
-      </div>
-      <div data-body>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-      </div>
-    </div>
+      ))}
+    </>
   );
-}
+});
+
+export default Card;
