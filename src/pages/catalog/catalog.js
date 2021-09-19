@@ -29,11 +29,35 @@ class Catalog extends Component {
 
   render() {
     return (
-      <div className="main_grid">
-          {this.state.isloading ? (
-            <Loader/>
-          ) : (
+      <>
+        {this.state.isloading ? (
+          <Loader />
+        ) : (
+          <div className="main_grid">
+            <div className="search__grid">
+              <div className="search__bar">
+                <div className="search__bar-wrapper">
+                  <div className="closeModal"></div>
+                  <div className="search__bar-suggest">
+                    <input
+                      class="search__input"
+                      type="text"
+                      placeholder="Поиск"
+                      value=""
+                      tabindex="1"
+                      data-bind="hasFocus: $root.hasFocus,
+                              value: $root.keyword,
+                              valueUpdate: 'input',
+                              event: {keydown: function (data, event) {return $root.onKeyDown(event)}}"
+                    />
+                  </div>
+                </div>
+
+                {/* <a href="#" class="close" /> */}
+              </div>
+            </div>
             <div className="middle_grid">
+              {" "}
               <div className="grid_leftcolumn">
                 <div className="filter_wrapper">
                   <div className="sheema_filter">
@@ -53,8 +77,9 @@ class Catalog extends Component {
                 </div>
               </div>
             </div>
-          )}
-      </div>
+          </div>
+        )}
+      </>
     );
   }
 }
