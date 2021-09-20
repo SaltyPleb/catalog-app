@@ -4,7 +4,7 @@ import { Context } from "../..";
 import { SIGNIN_ROUTE } from "../../utils/consts";
 import "./sign-in.css";
 
-function Auth() {
+const Auth = observer(() => {
   const { user } = useContext(Context);
   const locatinon = useLocation();
   const isLogin = locatinon.pathname === SIGNIN_ROUTE;
@@ -74,6 +74,6 @@ function Auth() {
       </div>
     </div>
   );
-}
+})
 
 export default Auth;
