@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import React, { useContext, useState } from "react";
 import { useLocation } from "react-router";
 import { Context } from "../..";
