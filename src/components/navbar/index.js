@@ -66,9 +66,9 @@ const Navbar = observer(() => {
             </NavLink>{" "}
             <NavBtnLink
               to="/sign-in"
-              onClick={() => {
-                user.setIsAuth(true);
-              }}
+              // onClick={() => {
+              //   user.setIsAuth(true);
+              // }}
             >
               Sign In
             </NavBtnLink>

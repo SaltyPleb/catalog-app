@@ -1,8 +1,7 @@
 import About from "../../pages/about/about";
 import Catalog from "../../pages/catalog/catalog";
 import Contact from "../../pages/contact/contact-me";
-import Signin from "../../pages/sign-in/sing-in";
-import Signup from "../../pages/sign-up/signup";
+import Auth from "../../pages/auth/auth";
 import Main from "../../pages/";
 import { ABOUT_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
 
@@ -25,11 +24,11 @@ export const publicRoutes = [
     },
     {
         path: SIGNUP_ROUTE,
-        Component: Signup
+        Component: Auth
     },
     {
         path: SIGNIN_ROUTE,
-        Component: Signin
+        Component: Auth
     },
     {
         path: MAIN_ROUTE,
