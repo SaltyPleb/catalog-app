@@ -12,6 +12,7 @@
 	place-items: center;--white: #e9e9e9;
 	--gray: #333;
 	--blue: #0367a6;
+	
 	--lightblue: #008997;
 
 	/* RADII */
@@ -107,7 +108,9 @@
 
 .overlay {
 	background-color: var(--lightblue);
-	background: url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+	background: url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg");
+	/* https://www.meme-arsenal.com/memes/e8d1b55b39eee901041848e61ed035ec.jpg */
+	/* ?auto=compress&cs=tinysrgb&h=750&w=1260 */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
