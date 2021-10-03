@@ -5,12 +5,28 @@
 
 }
 
+.brands_list{
+    position: relative;
+    margin-left: 10vh;
+}
+
+.brand_holder{
+    position: relative;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.device_checkbox{
+    margin-right: 0.5rem;
+}
 
 .label_holder {
     display: flex;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     cursor: pointer;
     font-size: 17px;
     -webkit-user-select: none;

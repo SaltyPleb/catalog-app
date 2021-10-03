@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

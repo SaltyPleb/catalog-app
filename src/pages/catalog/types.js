@@ -12,11 +12,11 @@ const types = observer(() => {
   const [devicechecked, setDeviceChacked] = useState(
     new Array(device.devices.length).fill(false)
   );
-  
+
     console.log(devicechecked);
   const handlerDeviceChecked = (position) => {
-    const updatedDeviceCheckedState = checked.map((item, id) =>
-      id === position ? !item : item
+    const updatedDeviceCheckedState = checked.map((item, name) =>
+      name === position ? !item : item
     );
     setDeviceChacked(updatedDeviceCheckedState);
   };
@@ -34,10 +34,10 @@ const types = observer(() => {
         <div className="brand_holder">
           <input
             className="device_checkbox"
-            id={id}
+            id={name}
             type="checkbox"
-            checked={devicechecked[position]}
-            onChange={() => handlerDeviceChecked(position)}
+            checked={devicechecked[name]}
+            onChange={() => handlerDeviceChecked(name)}
           />
           {name}
         </div>
