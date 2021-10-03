@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./catalog.css";
+import "./styles/catalog.css";
 import Card from "./card.js";
 import Loader from "../../components/loader/loader.js";
 import Types from "./types.js";
