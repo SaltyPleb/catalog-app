@@ -13,7 +13,6 @@ const types = observer(() => {
     new Array(device.devices.length).fill(false)
   );
 
-    console.log(devicechecked);
   const handlerDeviceChecked = (position) => {
     const updatedDeviceCheckedState = checked.map((item, name) =>
       name === position ? !item : item
