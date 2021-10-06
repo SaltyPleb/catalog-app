@@ -269,7 +269,8 @@ z-index: 100;
 .text__shadow {
 text-shadow: -3px 3px 0 #c29dfa, -6px 6px 0 #934ffa,-9px 9px 0 #6600ff;
 font-size:3rem;
-color: rgb(222, 194, 235);
+/* color: rgb(222, 194, 235); */
+color: transparent;
 }
 
 .right_btn {
