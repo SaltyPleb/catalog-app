@@ -3,6 +3,12 @@ import "./styles/catalog.css";
 import Card from "./card.js";
 import Loader from "../../components/loader/loader.js";
 import Types from "./types.js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // const postCards = data.map((post, key) => (
 //   <Card key={key} name={post.name} content={post.content} />
@@ -12,9 +18,8 @@ class Catalog extends Component {
   state = {
     data: [],
     isloading: true,
-    value: '',
+    value: "",
   };
-
 
   async componentDidMount() {
     const response = await fetch(
@@ -30,12 +35,12 @@ class Catalog extends Component {
     });
   }
   onChange = (event) => {
-    this.setState({ value: event.target.value })
-  }
+    this.setState({ value: event.target.value });
+  };
 
   onClear = () => {
-    this.setState({ value: "" })
-  }
+    this.setState({ value: "" });
+  };
 
   // onChange = () => {
   //   this.setState(prevState => ({
@@ -49,10 +54,13 @@ class Catalog extends Component {
         {this.state.isloading ? (
           <Loader />
         ) : (
-          <> <div className="right_bar">
-          <div className="right_btn text__shadow">Likes</div>
-          <div className="right_btn text__shadow">History</div>
-          </div>
+          <>
+            {" "}
+            <div className="right_bar">
+              <Link to="/catalog/likes" className="right_btn text__shadow">Likes</Link>
+              <Link to="/catalog/constructor" className="right_btn text__shadow">Constructor</Link>
+              <Link to="/catalog/history" className="right_btn text__shadow">History</Link>
+            </div>
             <div className="main_grid">
               <div className="search__grid">
                 <div className="search__bar">
@@ -89,7 +97,6 @@ class Catalog extends Component {
                   </div>
                 </div>
               </div>
-
             </div>
           </>
         )}
