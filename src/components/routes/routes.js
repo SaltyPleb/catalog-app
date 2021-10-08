@@ -4,6 +4,7 @@ import Contact from "../../pages/contact/contact-me";
 import Auth from "../../pages/auth/auth";
 import Main from "../../pages/";
 import { ABOUT_ROUTE, CATALOG_CONSTRUCTOR, CATALOG_HISTORY, CATALOG_LIKES, CATALOG_ROUTE, CONTACT_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
+import Constructor from "../../pages/constructor/constructor";
 
 export const authRoutes = [
     
@@ -44,6 +45,6 @@ export const publicRoutes = [
     },
     {
         path: CATALOG_CONSTRUCTOR,
-        Component: Main
+        Component: Constructor
     }
 ];

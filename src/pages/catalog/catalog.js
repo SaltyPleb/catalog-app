@@ -51,7 +51,6 @@ class Catalog extends Component {
           <Loader />
         ) : (
           <>
-            {" "}
             <RightNav />
             <div className="main_grid">
               <div className="search__grid">
