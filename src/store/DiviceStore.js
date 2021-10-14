@@ -47,7 +47,8 @@ export default class DeviceStore {
             {id: 2, name: 'Nvidea'},
             {id: 3, name: 'kriva'},
             {id: 4, name: 'lala'},
-            {id: 5, name: 'last'}
+            {id: 5, name: 'last'},
+            {id: 6, name: 'fdsgdsg'},
         ]
 
         this._devices = [
