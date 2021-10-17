@@ -3,7 +3,7 @@
   justify-content: flex-start;
   align-items: stretch;
   width: 95%;
-  height: 95%;
+  height: 93%;
   position: absolute;
   background-size: cover;
 }
@@ -15,22 +15,23 @@
 }
 
 .about_section {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-items: center;
-  align-items: center;
+  align-items: center; */
   padding: 60px;
 }
 
 .about_logo {
   cursor: pointer;
+  max-width: 50vh;
 }
 
 ul {
   counter-reset: index;
   padding: 0;
-  max-width: 300px;
+  max-width: 1600px;
 }
 
 li {
@@ -52,7 +53,7 @@ li::before {
   font-variant-numeric: tabular-nums;
   align-self: flex-start;
   background-image: linear-gradient(to bottom, aquamarine, orangered);
-  background-attachment: fixed;
+  background-attachment: fixed; 
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
