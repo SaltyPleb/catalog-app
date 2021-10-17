@@ -9,8 +9,8 @@ const Constructor = () => {
         <Rightnav />
         <div className="main">
           <div className="component_bloks">
-            <div className="components">
-              {/* need to make it better or just delete */}
+            {/* <div className="components">
+            //  need to make it better or just delete 
               <div className="component_name">GPU</div>
               <div className="component_name">CPU</div>
               <div className="component_name">Motherboard</div>
@@ -19,39 +19,59 @@ const Constructor = () => {
               <div className="component_name">Cooling(CPU)</div>
               <div className="component_name">Power supply</div>
               <div className="component_name">Case</div>
-            </div>
+            </div> */}
+            
+            {/* remove this to separate js component*/}
             <div className="pluses">
-              <div className="plus_block">
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">GPU</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                2
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">CPU</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                3
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">Motherboard</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                4
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">RAM</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                5
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">Storage</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                6
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">Cooling(CPU)</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                7
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">Power supply</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
-              <div className="plus_block">
-                8
-                <div className="big_plus" />
+              <div className="comp_block">
+                <div className="component_name">Case</div>
+                <div className="plus_block">
+                  <div className="big_plus" />
+                </div>
               </div>
+              
             </div>
           </div>
           <div className="search_results">

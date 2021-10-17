@@ -2,7 +2,7 @@
     border-radius: 20px;
     max-width: 1380px;
     height: 88vh;
-    margin: 2vh auto;
+    margin: 3vh auto;
     background: hsl(200, 20%, 90%);
     width: 100%;
     display: flex;
@@ -20,21 +20,22 @@
     flex-wrap: wrap;
 }
 
-.components{
+.comp_block{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
 .component_name{
     display: flex;
     font-size:130%;
     font-family:arial;
+    margin-bottom: 5px;
 }
 
 .pluses {
     display: flex;
+    margin-top: 7px;
 }
 
 .plus_block {
@@ -43,8 +44,8 @@
     justify-content: center;
     align-items: center;
     border: 6px solid #2e2d30;
+    margin: auto 14px 10px 14px;
     border-radius: 15px;
-    margin: 13px;
     /* background-color: aqua; */
     height: 110px;
     width: 110px;
