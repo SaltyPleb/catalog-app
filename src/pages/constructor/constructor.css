@@ -127,5 +127,18 @@
     font-family:arial;
 }
 
+.product_icon{
+    max-width: 100px;
+    border-radius: 11px;
+}
 
+.construcotr_img_holder{
+    z-index: 9;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+}
 

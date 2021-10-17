@@ -27,12 +27,18 @@ const Constructor = () => {
                 <div className="component_name">GPU</div>
                 <div className="plus_block">
                   <div className="big_plus" />
+                  <div className="construcotr_img_holder">
+                    <img className="product_icon" src="https://www.asus.com/media/global/gallery/797CKaxpZhF41vQA_setting_xxx_0_90_end_800.png"/>
+                  </div>
                 </div>
               </div>
               <div className="comp_block">
                 <div className="component_name">CPU</div>
                 <div className="plus_block">
                   <div className="big_plus" />
+                  <div className="construcotr_img_holder">
+                    <img className="product_icon" src="https://ae04.alicdn.com/kf/HTB15o5iXnHuK1RkSndVq6xVwpXan/Intel-Core-i7-7700K-4-4-2-8.jpg"/>
+                  </div>
                 </div>
               </div>
               <div className="comp_block">
