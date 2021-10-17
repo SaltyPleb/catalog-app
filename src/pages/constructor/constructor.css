@@ -20,16 +20,17 @@
     flex-wrap: wrap;
 }
 
-.comp_block{
+.comp_block {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.component_name{
+
+.component_name {
     display: flex;
-    font-size:130%;
-    font-family:arial;
+    font-size: 130%;
+    font-family: arial;
     margin-bottom: 5px;
 }
 
@@ -78,7 +79,7 @@
     width: 95%;
     margin: 15px;
     overflow: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 .serach_card {
@@ -95,20 +96,20 @@
     max-height: 62px;
 }
 
-.search_img{
+.search_img {
     position: relative;
     margin-right: 8px;
     max-width: 40px;
     max-height: 40px;
 }
 
-.res_cards{
+.res_cards {
     width: 100%;
     margin: 8px;
 
 }
 
-.link_icon{
+.link_icon {
     cursor: pointer;
     z-index: 6;
     position: relative;
@@ -120,19 +121,19 @@
     margin-left: 6px;
 }
 
-.res_info{
+.res_info {
     width: 93.5%;
     margin-right: 6px;
-    font-size:130%;
-    font-family:arial;
+    font-size: 130%;
+    font-family: arial;
 }
 
-.product_icon{
+.product_icon {
     max-width: 100px;
     border-radius: 11px;
 }
 
-.construcotr_img_holder{
+.construcotr_img_holder {
     z-index: 9;
     width: 100px;
     height: 100px;
@@ -142,3 +143,50 @@
     align-items: center;
 }
 
+.selected_items {
+    display: flex;
+    position: absolute;
+    background-color: thistle;
+    border-radius: 0 20px 20px 0;
+    height: 700px;
+    width: 250px;
+    margin-top: 3vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.lv_name {
+    font-size: 130%;
+    font-family: arial;
+}
+
+.selection_block {
+    margin: 10px 5px 15px 5px;
+    width: 90%;
+    height: 80%;
+
+}
+
+hr{
+    border:1px solid #0f6935;
+    width: 90%;
+}
+
+.sel_item{
+    font-size: 120%;
+    font-family: arial;
+    margin: 6px auto 6px auto;
+}
+
+.sum_countes {
+    display: flex;
+    margin: 10px 5px 15px 5px;
+    width: 90%;
+    height: 20%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}

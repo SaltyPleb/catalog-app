@@ -7,6 +7,28 @@ const Constructor = () => {
     <>
       <div className="constructor_main">
         <Rightnav />
+        <div className="selected_items">
+          <div className="lv_name">Selected items</div>
+          <div className="selection_block">
+            <div className="sel_item">
+              1. GPU - GTX 1660 Ti - 450$
+            </div>
+            <div className="sel_item">
+              2. CPU - I7-7700k - 450$
+            </div>
+          </div>
+          <hr />
+          <div className="sum_countes">
+          <div className="lv_name">Total sum</div>
+          <div className="sel_item">
+            All components ~900$
+            <p/>
+            Delivery - ~50$
+            <p/>
+            Total price - ~950$
+          </div>
+          </div>
+        </div>
         <div className="main">
           <div className="component_bloks">
             {/* <div className="components">
