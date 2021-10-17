@@ -12,12 +12,29 @@
 
 .constructor_main {
     overflow: hidden;
-
 }
 
 .component_bloks {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.components{
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.component_name{
+    display: flex;
+    font-size:130%;
+    font-family:arial;
+}
+
+.pluses {
+    display: flex;
 }
 
 .plus_block {
