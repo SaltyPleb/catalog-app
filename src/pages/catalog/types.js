@@ -25,10 +25,11 @@ const types = observer(() => {
     setDeviceChacked(updatedDeviceCheckedState);
   };
 
-  const handlerDeviceDisplay = (position) => {
+  const handlerDeviceDisplay = (position, name) => {
     const updatedDeviceCheckedState = checked.map((item, name) =>
       name === position ? !item : item
     );
+    device.setSelectedType(position, name)
     setdeviceDispaly(updatedDeviceCheckedState);
   };
 
@@ -40,7 +41,7 @@ const types = observer(() => {
   };
 
   const fillDevice = (position) => {
-    return device.devices.map(({ id, name }) =>
+    return device.brands.map(({ id, name }) =>
       position === id ? (
         <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}>
           <div className="brand_holder ">
@@ -60,24 +61,25 @@ const types = observer(() => {
 
   return (
     <div className="items">
-      {device.brands.map(({ id, name }) => (
+      {device.types.map(type => (
         <>
-          <label className="label_holder" key={id}>
+          <label className="label_holder" key={type.id}>
             <input
+              // active={id === device.setSelectedType(name)}
               type="checkbox"
-              checked={checked[id]}
-              onChange={() => handlerChecked(id)}
-              onClick={() => handlerDeviceDisplay(id)}
+              checked={type.id === device.selectedType}
+              onChange={() => handlerChecked(type.id)}
+              onClick={() => handlerDeviceDisplay(type.id, type.name)}
             />
             <span className="checkmark" />
-            {name}
+            {type.name}
             <img
-              className= {deviceDisplay[id] ? "img_holder img__ratation" : "img_holder"}
+              className= {deviceDisplay[type.id] ? "img_holder img__ratation" : "img_holder"}
               src="https://image.flaticon.com/icons/png/512/25/25623.png"
               alt=""
             />
           </label>
-          <div className="brands_list ">{fillDevice(id)}</div>
+          <div className="brands_list ">{fillDevice(type.id)}</div>
         </>
       ))}
     </div>

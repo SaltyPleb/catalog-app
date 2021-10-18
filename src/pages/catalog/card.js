@@ -6,7 +6,7 @@ const Card = observer(() => {
   const { device } = useContext(Context);
   return (
     <>
-      {device.types.map((type) => (
+      {device.devices.map((type) => (
         <div className="card" key={type.id}>
           <div className="header">
             <img className="header-img skeleton" alt=""/>
