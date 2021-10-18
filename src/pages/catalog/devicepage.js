@@ -20,7 +20,7 @@ const DevicePage = () => {
           <div className="device_info">
             <div className="description">{device.description}</div>
             <div className="device_price">Avarage price {device.price} $</div>
-            <button>Available now</button>
+            <button className="btn-cyber">Available now</button>
           </div>
         </div>
       </div>

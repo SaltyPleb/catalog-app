@@ -40,7 +40,7 @@ hr{
     font-size: 140%;
 }
 
-button, button::after {
+.btn-cyber, .btn-cyber::after {
     width: 280px;
     height: 66px;
     font-size: 36px;
@@ -57,7 +57,7 @@ button, button::after {
     margin-top: 20px;
   }
   
-  button::after {
+  .btn-cyber::after {
     --slice-0: inset(50% 50% 50% 50%);
     --slice-1: inset(80% -6px 0 0);
     --slice-2: inset(50% -6px 30% 0);
@@ -77,7 +77,7 @@ button, button::after {
     clip-path: var(--slice-0);
   }
   
-  button:hover::after {
+  .btn-cyber:hover::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
   }
