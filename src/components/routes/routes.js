@@ -6,6 +6,7 @@ import Main from "../../pages/";
 import { ABOUT_ROUTE, CATALOG_CONSTRUCTOR, CATALOG_HISTORY, CATALOG_LIKES, CATALOG_ROUTE, CONTACT_ROUTE, DEVICE_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
 import Constructor from "../../pages/constructor/constructor";
 import DevicePage from "../../pages/catalog/devicepage";
+import likes from "../../pages/likes/likes";
 
 export const authRoutes = [
     
@@ -38,7 +39,7 @@ export const publicRoutes = [
     },
     {
         path: CATALOG_LIKES,
-        Component: Main
+        Component: likes
     },
     {
         path: CATALOG_HISTORY,

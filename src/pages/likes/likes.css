@@ -1,0 +1,22 @@
+
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 500px;
+}
+
+header {
+	display: flex;
+	align-items: center;	
+	font-weight: 600;
+	color: gray;
+	box-sizing: border-box;
+	user-select: none;
+	text-align: center;
+}
+
