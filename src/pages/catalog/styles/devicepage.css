@@ -32,7 +32,7 @@ hr{
     display: flex;
     flex-direction: column;
     padding: 40px;
-    margin-left: 22vh;
+    margin-left: 15rem;
 }
 
 .device_price{
