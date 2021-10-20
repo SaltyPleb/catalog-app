@@ -1,10 +1,9 @@
-
-
+/* 
 body {
 	font-family: "Open Sans", sans-serif;
-}
+} */
 
-.container {
+.likes_container {
 	margin: 0 auto;
 	margin-top: 50px;
 	width: 500px;

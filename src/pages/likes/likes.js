@@ -6,7 +6,7 @@ const likes = () => {
   return (
     <>
       <Rightnav />
-      <section class="container">
+      <section class="likes_container">
         <header>
           <div class="button-col">
             <button class="btn" name="Add Task">
