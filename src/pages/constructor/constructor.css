@@ -148,8 +148,8 @@
     position: absolute;
     background-color: thistle;
     border-radius: 0 20px 20px 0;
-    height: 700px;
-    width: 250px;
+    height: 50rem;
+    width: 20rem;
     margin-top: 3vh;
     flex-direction: column;
     justify-content: flex-start;
@@ -169,6 +169,10 @@
 
 }
 
+.sel_item .link_icon{
+    
+}
+
 hr{
     border:1px solid #0f6935;
     width: 90%;
@@ -178,6 +182,7 @@ hr{
     font-size: 120%;
     font-family: arial;
     margin: 6px auto 6px auto;
+    display: flex;
 }
 
 .sum_countes {

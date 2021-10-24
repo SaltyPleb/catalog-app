@@ -19,3 +19,22 @@ header {
 	text-align: center;
 }
 
+.item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.progress, .dates, .priority, .user, .text {
+	padding: .45rem;
+	display: flex;
+}
+
+.text{
+	max-width:12rem;
+}
+
+.progress{
+right: 0;
+}
+

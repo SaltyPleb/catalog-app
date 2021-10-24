@@ -36,17 +36,10 @@ const likes = () => {
         </header>
 
         <ul class="task-items">
-          <li class="item type1">
-            <div class="task">
-              <div class="icon"> </div>
-              <div class="name" style={{ width: "150px" }}>
-                {" "}
-              </div>
-            </div>
-
+          <li class="item type">
             <div class="status">
               <div class="icon off"> </div>
-              <div class="text"> Off Track </div>
+              <div class="text"> Ofdasdasdasdf Track </div>
             </div>
 
             <div class="progress">
@@ -63,124 +56,16 @@ const likes = () => {
 
             <div class="user">
               <img
-                src="https://source.unsplash.com/40x40/?indian"
+                src="https://source.unsplash.com/40x40/?gpu"
                 alt="Image 001"
                 class="owner-img"
               />
             </div>
           </li>
-
-          <li class="item type4">
-            <div class="task">
-              <div class="icon"> </div>
-              <div class="name" style={{ width: "120px" }}>
-                {" "}
-              </div>
-            </div>
-
-            <div class="status">
-              <div class="icon warning"> </div>
-              <div class="text"> At Risk </div>
-            </div>
-
-            <div class="progress">
-              <progress value="45" max="100" />
-            </div>
-
-            <div class="dates">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="priority">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="user">
-              <img
-                src="https://source.unsplash.com/40x40/?face"
-                alt="Image 001"
-                class="owner-img"
-              />
-            </div>
-          </li>
-
-          <li class="item type2">
-            <div class="task">
-              <div class="icon"> </div>
-              <div class="name" style={{ width: "120px" }}>
-                {" "}
-              </div>
-            </div>
-
+          <li class="item type">
             <div class="status">
               <div class="icon off"> </div>
               <div class="text"> Off Track </div>
-            </div>
-
-            <div class="progress">
-              <progress value="10" max="100" />
-            </div>
-
-            <div class="dates">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="priority">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="user">
-              <img
-                src="https://source.unsplash.com/40x40/?european"
-                alt="Image 001"
-                class="owner-img"
-              />
-            </div>
-          </li>
-
-          <li class="item type2">
-            <div class="task">
-              <div class="icon"> </div>
-              <div class="name" style={{ width: "100px" }}>
-                {" "}
-              </div>
-            </div>
-
-            <div class="status">
-              <div class="icon"> </div>
-              <div class="text"> On Track </div>
-            </div>
-
-            <div class="progress">
-              <progress value="75" max="100" />
-            </div>
-
-            <div class="dates">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="priority">
-              <div class="bar"> </div>
-            </div>
-
-            <div class="user">
-              <img
-                src="https://source.unsplash.com/40x40/?asian"
-                alt="Image 001"
-                class="owner-img"
-              />
-            </div>
-          </li>
-
-          <li class="item type1">
-            <div class="task">
-              <div class="icon"> </div>
-              <div class="name"> </div>
-            </div>
-
-            <div class="status">
-              <div class="icon warning"> </div>
-              <div class="text"> At Risk </div>
             </div>
 
             <div class="progress">
@@ -197,12 +82,40 @@ const likes = () => {
 
             <div class="user">
               <img
-                src="https://source.unsplash.com/40x40/?american"
+                src="https://source.unsplash.com/40x40/?cpu"
                 alt="Image 001"
                 class="owner-img"
               />
             </div>
           </li>
+          <li class="item type">
+            <div class="status">
+              <div class="icon off"> </div>
+              <div class="text"> Off Tfsdfsdfsrack </div>
+            </div>
+
+            <div class="progress">
+              <progress value="55" max="100" />
+            </div>
+
+            <div class="dates">
+              <div class="bar"> </div>
+            </div>
+
+            <div class="priority">
+              <div class="bar"> </div>
+            </div>
+
+            <div class="user">
+              <img
+                src="https://source.unsplash.com/40x40/?ram"
+                alt="Image 001"
+                class="owner-img"
+              />
+            </div>
+          </li>
+
+          
         </ul>
       </section>
     </>

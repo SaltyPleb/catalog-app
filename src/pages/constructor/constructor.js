@@ -11,11 +11,12 @@ const Constructor = () => {
           <div className="lv_name">Selected items</div>
           <div className="selection_block">
             <div className="sel_item">
-              1. GPU - GTX 1660 Ti - 450$
+              1. GPU - GTX 1660 Ti - 450$ <div className="link_icon"></div>
             </div>
             <div className="sel_item">
               2. CPU - I7-7700k - 450$
             </div>
+            
           </div>
           <hr />
           <div className="sum_countes">
