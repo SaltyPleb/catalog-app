@@ -5,7 +5,7 @@ const DevicePage = () => {
   const device = {
     id: 1,
     name: "Видеокарта Palit GeForce RTX 3060 Dual 12GB GDDR6 NE63060019K9-190AD",
-    price: "500",
+    price: "500.00",
     raiting: "5",
     img: `https://www.asus.com/media/global/gallery/797CKaxpZhF41vQA_setting_xxx_0_90_end_800.png`,
     description:
@@ -13,14 +13,44 @@ const DevicePage = () => {
   };
   return (
     <div className="device_main">
-      <div className="dev_main">
-        <div className="top_name"><b>{device.name}</b></div>
-        <div className="add_info">
-          <img className="device_img" src={device.img} alt="" />
-          <div className="device_info">
-            <div className="description">{device.description}</div>
-            <div className="device_price">Avarage price {device.price} $</div>
-            <button className="btn-cyber">Available now</button>
+      <div class="wrapper">
+        <div class="dev_card">
+          <div class="product-left">
+            <div class="dev_header">
+              <h1>{device.name}</h1>
+              <h2>Raiting is {device.raiting}</h2>
+            </div>
+
+            <div class="product-main">
+              <div class="focus">
+                <span>Description</span>
+                <span>Details</span>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Ratione voluptatem quam vel, delectus expedita ullam asperiores
+                laudantium modi. Voluptatum eum cum quis ea modi. Reiciendis
+                asperiores aut beatae odit minima.
+              </p>
+            </div>
+
+            <div class="product-details">
+              <div class="product-total">
+                <h3>Total Price</h3>
+                <p>${device.price}</p>
+              </div>
+            </div>
+            <div class="product-btns">
+              <a href="#" class="product-add">
+                Add To Cart
+              </a>
+            </div>
+          </div>
+          <div class="product-right">
+            <img
+              src={device.img}
+              alt=""
+            />
           </div>
         </div>
       </div>
