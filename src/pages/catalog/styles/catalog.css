@@ -285,7 +285,7 @@ color: transparent;
 
 .search__results{
   position: absolute;
-  height: 70vh;
+  height: 36rem;
   width: 100%;
   background-color:rgb(255, 255, 255);
   z-index: 9;

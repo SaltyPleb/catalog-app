@@ -149,7 +149,8 @@ hr {
 .wrapper {
   height: 93vh;
   position: relative;
-  background-color: #ccc5b9;
+  background-color: #ffffff;
+  /* background-color: #ccc5b9; */
 }
 
 .dev_card {
@@ -161,14 +162,15 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: -2rem 2rem 3.2rem rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
 }
 
 .product-left {
   height: 100%;
   width: 70%;
   padding: 4rem 2rem;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   background: #333;
@@ -179,8 +181,8 @@ hr {
   background: #fff;
   height: auto;
   width: 100%;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +213,7 @@ hr {
   text-transform: uppercase;
   margin: 0 0 1rem 0;
   padding: 0 0 0.9rem 0;
-  border-bottom: 0.2rem solid rgba(250, 250, 250, 0.3);
+  border-bottom: 0.15rem solid rgba(250, 250, 250, 0.3);
 }
 
 .focus span:last-child {

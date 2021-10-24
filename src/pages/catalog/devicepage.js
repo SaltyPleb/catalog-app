@@ -42,7 +42,7 @@ const DevicePage = () => {
             </div>
             <div class="product-btns">
               <a href="#" class="product-add">
-                Add To Cart
+                Add To Favorite
               </a>
             </div>
           </div>

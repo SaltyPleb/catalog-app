@@ -7,6 +7,7 @@ import RightNav from "./rightnav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
+import Search from "./search";
 
 const cat = observer(() => {
   const { device } = useContext(Context);
@@ -30,7 +31,7 @@ const cat = observer(() => {
               </div>
             </div>
             <div className= {device.searchText ? "search__results search_view" : "search__results"}>
-              fd
+              <Search/>
             </div>
             {/* <a href="#" class="close" /> */}
           </div>
