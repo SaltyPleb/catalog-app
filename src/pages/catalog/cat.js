@@ -18,14 +18,19 @@ const cat = observer(() => {
         <div className="search__grid">
           <div className="search__bar">
             <div className="search__bar-wrapper">
-              <div className="closeModal"></div>
+              <div className="closeModal" onClick={() => device.setSearchText("") }></div>
               <div className="search__bar-suggest">
                 <input
                   className="search__input"
                   type="text"
                   placeholder="Поиск"
+                  value={device.searchText}
+                  onChange={(event) => {device.setSearchText(event.target.value)}}
                 />
               </div>
+            </div>
+            <div className= {device.searchText ? "search__results search_view" : "search__results"}>
+              fd
             </div>
             {/* <a href="#" class="close" /> */}
           </div>

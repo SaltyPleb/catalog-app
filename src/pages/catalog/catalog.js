@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Catalog extends Component {
   
+  
   state = {
     data: [],
     isloading: true,
@@ -33,6 +34,7 @@ class Catalog extends Component {
   }
   onChange = (event) => {
     this.setState({ value: event.target.value });
+
   };
 
   onClear = () => {

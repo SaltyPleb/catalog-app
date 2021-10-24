@@ -201,6 +201,7 @@ z-index: 100;
   width: 100%;
   align-items: center;
   display: block;
+  z-index: 9;
 }
 
 .closeModal {
@@ -280,4 +281,22 @@ color: transparent;
   margin: 10px;
   -webkit-writing-mode: vertical-rl; 
   writing-mode:tb-rl;
+}
+
+.search__results{
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+  background-color:rgb(255, 255, 255);
+  z-index: 9;
+  top: -1000px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 3px 2px 0 rgba(0,0,0,.1);
+  transition: 0.8s;
+
+}
+
+.search_view{
+  transition: 0.7s;
+  top: 3rem;
 }

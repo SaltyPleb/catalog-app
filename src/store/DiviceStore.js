@@ -30,6 +30,8 @@ export default class DeviceStore {
             {id: 7, name: 'a4'},
         ]
         this._selectedType = {}
+
+        this._searchText = "f"
         makeAutoObservable(this)
     }
 
@@ -49,6 +51,10 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
+    setSearchText(text){
+        this._searchText = text
+    }
+
     get types() {
         return this._types
     }
@@ -63,5 +69,9 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get searchText(){
+        return this._searchText
     }
 }
