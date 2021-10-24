@@ -19,8 +19,8 @@
 }
 
 .img__ratation{
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
   transition: 0.5s;
 }
 
@@ -58,8 +58,8 @@
   height: 15px;
   margin-left: 10rem;
   transition: 0.5s;
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  /* -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); */
 }
 
 /* Hide the browser's default checkbox */

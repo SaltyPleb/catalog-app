@@ -75,6 +75,7 @@ const types = observer(() => {
             {type.name}
             <img
               className= {deviceDisplay[type.id] ? "img_holder img__ratation" : "img_holder"}
+              active={type.id === device.selectedType}
               src="https://image.flaticon.com/icons/png/512/25/25623.png"
               alt=""
             />
