@@ -148,8 +148,8 @@
     position: absolute;
     background-color: thistle;
     border-radius: 0 20px 20px 0;
-    height: 50rem;
-    width: 20rem;
+    height: 45.9rem;
+    width: 17.5rem;
     margin-top: 3vh;
     flex-direction: column;
     justify-content: flex-start;
@@ -188,7 +188,7 @@ hr{
 .sum_countes {
     display: flex;
     margin: 10px 5px 15px 5px;
-    width: 90%;
+    width: 80%;
     height: 20%;
     flex-direction: column;
     justify-content: flex-start;
