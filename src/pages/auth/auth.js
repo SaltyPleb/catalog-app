@@ -1,14 +1,15 @@
 import { observer } from "mobx-react-lite";
 import React, { useContext, useState } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { Context } from "../..";
 import { login, registration } from "../../http/userAPI";
-import { SIGNIN_ROUTE } from "../../utils/consts";
+import { CATALOG_ROUTE, SIGNIN_ROUTE } from "../../utils/consts";
 import "./sign-in.css";
 
-const Auth = () => {
+const Auth = observer(() => {
   const { user } = useContext(Context);
   const locatinon = useLocation();
+  const history = useHistory();
   const isLogin = locatinon.pathname === SIGNIN_ROUTE;
   const [className, setclassName] = useState(
     isLogin ? "container-si" : "container-si right-panel-active"
@@ -23,13 +24,17 @@ const Auth = () => {
   const [password, setPassword] = useState("");
 
   const click = async () => {
-    if (isLogin) {
-      const response = await login();
-      console.log(response);
-    } else {
-      const response = await registration(email, password);
-      console.log(response);
-    }
+    try {
+      let data;
+      if (isLogin) {
+        data = await login(email, password);
+      } else {
+        data = await registration(email, password);
+      }
+      user.setUser(user);
+      user.setIsAuth(true);
+      history.push(CATALOG_ROUTE)
+    } catch (e) {alert(e.response.data.message)}
   };
 
   return (
@@ -104,6 +109,6 @@ const Auth = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Auth;
