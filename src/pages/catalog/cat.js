@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./styles/catalog.css";
-import Card from "./card.js";
+import DeviceList from "./DeviceList.js";
 import Loader from "../../components/loader/loader.js";
 import Types from "./types.js";
 import RightNav from "./rightnav";
@@ -47,9 +47,9 @@ const cat = observer(() => {
           <div className="right_grid">
             <div className="grid">
               {/* {this.state.data.map(() => ( */}
-              {device.devices.map((device) => (
-                <Card key={device.id} device={device} />
-              ))}
+
+                <DeviceList/>
+
               {/* <Card /> */}
               {/* ))} */}
             </div>
