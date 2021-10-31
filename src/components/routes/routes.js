@@ -3,10 +3,11 @@ import Catalog from "../../pages/catalog/cat";
 import Contact from "../../pages/contact/contact-me";
 import Auth from "../../pages/auth/auth";
 import Main from "../../pages/";
-import { ABOUT_ROUTE, CATALOG_CONSTRUCTOR, CATALOG_HISTORY, CATALOG_LIKES, CATALOG_ROUTE, CONTACT_ROUTE, DEVICE_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
+import { ABOUT_ROUTE, ADMIN_ROUTE, CATALOG_CONSTRUCTOR, CATALOG_HISTORY, CATALOG_LIKES, CATALOG_ROUTE, CONTACT_ROUTE, DEVICE_ROUTE, MAIN_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
 import Constructor from "../../pages/constructor/constructor";
 import DevicePage from "../../pages/catalog/devicepage";
 import likes from "../../pages/likes/likes";
+import Admin from "../../pages/admin/Admin";
 
 export const authRoutes = [
     
@@ -53,4 +54,8 @@ export const publicRoutes = [
         path: DEVICE_ROUTE + '/:id',
         Component: DevicePage
     },
+    {
+        path: ADMIN_ROUTE,
+        Component: Admin
+    }
 ];
