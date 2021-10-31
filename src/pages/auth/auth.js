@@ -10,12 +10,12 @@ const Auth = observer(() => {
   const locatinon = useLocation();
   const isLogin = locatinon.pathname === SIGNIN_ROUTE;
   const [className, setclassName] = useState(
-    isLogin ? "container" : "container right-panel-active"
+    isLogin ? "container-si" : "container-si right-panel-active"
   );
   const onSignInClick = () => {
-    className === "container right-panel-active"
-      ? setclassName("container")
-      : setclassName("container right-panel-active");
+    className === "container-si right-panel-active"
+      ? setclassName("container-si")
+      : setclassName("container-si right-panel-active");
   };
 
   return (
