@@ -10,6 +10,7 @@ import {
   NavBtnLink,
 } from "./NavbarElements.js";
 import { observer } from "mobx-react-lite";
+import { ABOUT_ROUTE, ADMIN_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts.js";
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
@@ -31,13 +32,13 @@ const Navbar = observer(() => {
 
         {user.isAuth ? (
           <NavMenu>
-            <NavLink to="/about" activeStyle>
+            <NavLink to={ABOUT_ROUTE} activeStyle>
               About
             </NavLink>
-            <NavLink to="/catalog" activeStyle>
+            <NavLink to={CATALOG_ROUTE} activeStyle>
               Catalog
             </NavLink>
-            <NavLink to="/contact-me" activeStyle>
+            <NavLink to={CONTACT_ROUTE} activeStyle>
               Contact us
             </NavLink>
             <NavLink
@@ -52,20 +53,23 @@ const Navbar = observer(() => {
           </NavMenu>
         ) : (
           <NavMenu>
-            <NavLink to="/about" activeStyle>
+            <NavLink to={ADMIN_ROUTE} activeStyle>
+              Admin
+            </NavLink>
+            <NavLink to={ABOUT_ROUTE} activeStyle>
               About
             </NavLink>
-            <NavLink to="/catalog" activeStyle>
+            <NavLink to={CATALOG_ROUTE} activeStyle>
               Catalog
             </NavLink>
-            <NavLink to="/contact-me" activeStyle>
+            <NavLink to={CONTACT_ROUTE} activeStyle>
               Contact us
             </NavLink>
-            <NavLink to="/sign-up" activeStyle>
+            <NavLink to={SIGNUP_ROUTE} activeStyle>
               Sign up
             </NavLink>{" "}
             <NavBtnLink
-              to="/sign-in"
+              to={SIGNIN_ROUTE}
               // onClick={() => {
               //   user.setIsAuth(true);
               // }}
