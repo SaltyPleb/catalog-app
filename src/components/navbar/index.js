@@ -32,6 +32,9 @@ const Navbar = observer(() => {
 
         {user.isAuth ? (
           <NavMenu>
+            <NavLink to={ADMIN_ROUTE} activeStyle>
+              Admin
+            </NavLink>
             <NavLink to={ABOUT_ROUTE} activeStyle>
               About
             </NavLink>
@@ -54,9 +57,9 @@ const Navbar = observer(() => {
           </NavMenu>
         ) : (
           <NavMenu>
-            <NavLink to={ADMIN_ROUTE} activeStyle>
+            {/* <NavLink to={ADMIN_ROUTE} activeStyle>
               Admin
-            </NavLink>
+            </NavLink> */}
             <NavLink to={ABOUT_ROUTE} activeStyle>
               About
             </NavLink>
