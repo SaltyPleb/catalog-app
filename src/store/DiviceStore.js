@@ -28,6 +28,7 @@ export default class DeviceStore {
 
         ]
         this._selectedType = {}
+        this._selectedBrand = {}
 
         this._searchText = "f"
         makeAutoObservable(this)
@@ -49,6 +50,10 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     setSearchText(text){
         this._searchText = text
     }
@@ -67,6 +72,10 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 
     get searchText(){
