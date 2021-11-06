@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./styles/catalog.css";
 import DeviceList from "./DeviceList.js";
 import Loader from "../../components/loader/loader.js";
@@ -8,9 +8,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
 import Search from "./search";
+import { fetchTypes } from "../../http/deviceAPI";
 
 const cat = observer(() => {
   const { device } = useContext(Context);
+
+  useEffect(() => {
+    fetchTypes().then(data => device.setTypes(data))
+  },[])
 
   return (
     <div>

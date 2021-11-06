@@ -2,14 +2,7 @@ import { makeAutoObservable } from "mobx"
 
 export default class DeviceStore {
     constructor() {
-        this._types = [
-            {id: 1, name: 'Видеокарты'},
-            {id: 2, name: 'Процессоры'},
-            {id: 3, name: 'Материнские платы'},
-            {id: 4, name: 'Оперативная память'},
-            {id: 5, name: 'Системы охлаждения'},
-            {id: 6, name: 'SSD'},
-        ]
+        this._types = []
 
         this._brands = [
             {id: 1, name: 'AMD'},
