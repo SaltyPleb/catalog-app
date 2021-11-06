@@ -23,14 +23,20 @@ const Auth = observer(() => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const click = async () => {
+  const SignInclick = async () => {
     try {
       let data;
-      if (isLogin) {
-        data = await login(email, password);
-      } else {
-        data = await registration(email, password);
-      }
+      data = await login(email, password);
+      user.setUser(user);
+      user.setIsAuth(true);
+      history.push(CATALOG_ROUTE)
+    } catch (e) {alert(e.response.data.message)}
+  };
+
+  const SignUpclick = async () => {
+    try {
+      let data;
+      data = await registration(email, password);
       user.setUser(user);
       user.setIsAuth(true);
       history.push(CATALOG_ROUTE)
@@ -59,7 +65,7 @@ const Auth = observer(() => {
               placeholder="Password"
               className="input"
             />
-            <button type="button" className="sign_btn" onClick={click}>
+            <button type="button" className="sign_btn" onClick={SignUpclick}>
               Sign Up
             </button>
           </form>
@@ -84,7 +90,7 @@ const Auth = observer(() => {
               className="input"
             />
             <a className="link">Forgot your password?</a>
-            <button type="button" className="sign_btn" onClick={click}>
+            <button type="button" className="sign_btn" onClick={SignInclick}>
               Sign In
             </button>
           </form>
