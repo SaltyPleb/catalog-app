@@ -8,13 +8,16 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
 import Search from "./search";
-import { fetchTypes } from "../../http/deviceAPI";
+import { fetchBrands, fetchTypes } from "../../http/deviceAPI";
 
 const cat = observer(() => {
   const { device } = useContext(Context);
 
   useEffect(() => {
     fetchTypes().then(data => device.setTypes(data))
+    fetchBrands().then(data => device.setBrands(data))
+    console.log(device.brands)
+    console.log(device.types)
   },[])
 
   return (
