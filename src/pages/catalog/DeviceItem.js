@@ -25,8 +25,6 @@ const DeviceItem = ({ device }) => {
               <div className="skeleton skeleton-text"></div>
             </>
           )}
-          {/* <div className="skeleton skeleton-text"></div>
-              <div className="skeleton skeleton-text"></div> */}
         </div>
       </div>
       <div data-body>

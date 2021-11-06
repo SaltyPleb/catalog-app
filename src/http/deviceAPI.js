@@ -2,7 +2,7 @@ import {$authHost, $host} from './index'
 import jwt_decode from 'jwt-decode'
 
 export const createType = async(type) => {
-    const {data} = await $host.post('api/type', type)
+    const {data} = await $authHost.post('api/type', type)
     return data
 }
 
@@ -12,7 +12,7 @@ export const fetchTypes = async() => {
 }
 
 export const createBrand = async(brand) => {
-    const {data} = await $host.post('api/brand', brand)
+    const {data} = await $authHost.post('api/brand', brand)
     return data
 }
 
