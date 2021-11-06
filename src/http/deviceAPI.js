@@ -21,8 +21,18 @@ export const fetchBrands = async() => {
     return data
 }
 
-export const check = async() => {
-    const {data} = await $authHost.get('api/user/auth')
-    localStorage.setItem('token', data.token)
-    return jwt_decode(data.token)
+export const createDevice = async(device) => {
+    const {data} = await $host.post('api/device', device)
+    return data
 }
+
+export const fetchDevices = async() => {
+    const {data} = await $host.get('api/device')
+    return data
+}
+
+export const fetchOneDevices = async(id) => {
+    const {data} = await $host.get('api/device/' + id)
+    return data
+}
+

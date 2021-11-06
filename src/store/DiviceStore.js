@@ -25,13 +25,7 @@ export default class DeviceStore {
         ]
 
         this._devices = [
-            {id: 1, name: 'GTX 1660'},
-            {id: 2, name: 'z1xt 60'},
-            {id: 3, name: 'RTX 2060'},
-            {id: 4, name: 'RTX 3060'},
-            {id: 5, name: 'RTX 1060'},
-            {id: 6, name: 'i7'},
-            {id: 7, name: 'a4'},
+
         ]
         this._selectedType = {}
 

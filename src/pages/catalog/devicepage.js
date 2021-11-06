@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/devicepage.css";
+import {useParams} from "react-router-dom"
+import { fetchOneDevices } from "../../http/deviceAPI";
+
 
 const DevicePage = () => {
-  const device = {
-    id: 1,
-    name: "Видеокарта Palit GeForce RTX 3060 Dual 12GB GDDR6 NE63060019K9-190AD",
-    price: "500.00",
-    raiting: "5",
-    img: `https://www.asus.com/media/global/gallery/797CKaxpZhF41vQA_setting_xxx_0_90_end_800.png`,
-    description:
-      "Интерфейс   PCI Express x16 4.0    Производитель графического процессора  NVIDIA  Графический процессор  GeForce RTX 3060   «Разогнанная» версия   Защита от майнинга (LHR)   Технические характеристик (референсная) астота графического процессора    1 320 МГц   Максимальная частота графического процессора    1 777 МГц",
-  };
+  const [device, setDevice] = useState({info: []})
+
+  const {id} = useParams()
+
+  useEffect(() => {
+    fetchOneDevices(id).then(data => setDevice(data))
+  }, [])
+
   return (
     <div className="device_main">
       <div class="wrapper">
@@ -48,7 +50,7 @@ const DevicePage = () => {
           </div>
           <div class="product-right">
             <img
-              src={device.img}
+              src={"http://localhost:5000/" + device.img}
               alt=""
             />
           </div>
