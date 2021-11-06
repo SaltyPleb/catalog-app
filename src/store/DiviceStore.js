@@ -2,34 +2,33 @@ import { makeAutoObservable } from "mobx"
 
 export default class DeviceStore {
     constructor() {
-        this._types = [
-            {id: 1, name: 'Видеокарты'},
-            {id: 2, name: 'Процессоры'},
-            {id: 3, name: 'Материнские платы'},
-            {id: 4, name: 'Оперативная память'},
-            {id: 5, name: 'Системы охлаждения'},
-            {id: 6, name: 'SSD'},
-        ]
+        this._types = []
 
         this._brands = [
-            {id: 1, name: 'AMD'},
-            {id: 2, name: 'Nvidea'},
-            {id: 3, name: 'kriva'},
-            {id: 4, name: 'lala'},
-            {id: 5, name: 'last'},
-            {id: 6, name: 'fdsgdsg'},
+            // {id: 1, name: '1'},
+            // {id: 2, name: '2'},
+            // {id: 3, name: '3'},
+            // {id: 4, name: '4'},
+            // {id: 5, name: '5'},
+            // {id: 6, name: '6'},
+            // {id: 7, name: '7'},
+            // {id: 8, name: '8'},
+            // {id: 9, name: '9'},
+            // {id: 10, name: '10'},
+            // {id: 11, name: '11'},
+            // {id: 12, name: '12'},
+            // {id: 13, name: '13'},
+            // {id: 14, name: '14'},
+            // {id: 15, name: '15'},
+            // {id: 16, name: '16'},
+
         ]
 
         this._devices = [
-            {id: 1, name: 'GTX 1660'},
-            {id: 2, name: 'z1xt 60'},
-            {id: 3, name: 'RTX 2060'},
-            {id: 4, name: 'RTX 3060'},
-            {id: 5, name: 'RTX 1060'},
-            {id: 6, name: 'i7'},
-            {id: 7, name: 'a4'},
+
         ]
         this._selectedType = {}
+        this._selectedBrand = {}
 
         this._searchText = "f"
         makeAutoObservable(this)
@@ -51,6 +50,10 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     setSearchText(text){
         this._searchText = text
     }
@@ -69,6 +72,10 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 
     get searchText(){

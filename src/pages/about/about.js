@@ -44,7 +44,7 @@ const About = () => {
             </li>
           </ul>
 
-          <img className="about_logo" src={logo1} alt="" />
+          {/* <img className="about_logo" src={logo1} alt="" /> */}
         </div>
       </div>
     </>

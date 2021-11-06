@@ -43,7 +43,8 @@ const types = observer(() => {
   const fillDevice = (position) => {
     return device.brands.map(({ id, name }) =>
       position === id ? (
-        <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}>
+        <div key={name} className={deviceDisplay[id] ? "" : ""}> 
+        {/* <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}> */}
           <div className="brand_holder ">
             <input
               className="device_checkbox"
@@ -63,7 +64,7 @@ const types = observer(() => {
     <div className="items">
       {device.types.map(type => (
         <>
-          <label className="label_holder" key={type.id}>
+          <label className="label_holder" key={type}>
             <input
               // active={id === device.setSelectedType(name)}
               type="checkbox"
