@@ -1,13 +1,24 @@
-import React, { useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
-import { createBrand } from "../../http/deviceAPI";
+import { observer } from "mobx-react";
+import React, { useContext, useEffect, useState } from "react";
+import { Modal, Button, Form, Dropdown } from "react-bootstrap";
+import { Context } from "../..";
+import { createBrand, fetchTypes } from "../../http/deviceAPI";
 
-const CreateBrand = ({ show, onHide }) => {
+const CreateBrand = observer(({ show, onHide }) => {
   const [value, setValue] = useState("");
   const addBrand = () => {
-    createBrand({ name: value }).then((data) => setValue(""));
+    const formData = new FormData()
+    formData.append('name', value)
+    formData.append('dep', device.selectedType.id)
+    createBrand(formData).then((data) => setValue(""));
     onHide();
   };
+
+  useEffect(() => {
+    fetchTypes().then((data) => device.setTypes(data));
+  }, []);
+
+  const { device } = useContext(Context)
 
   return (
     <Modal show={show} onHide={onHide} size="lg" centered>
@@ -18,6 +29,21 @@ const CreateBrand = ({ show, onHide }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
+        <Dropdown className="mt-2 md-2 mb-2">
+          <Dropdown.Toggle>
+            {device.selectedType.name || "Select type"}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {device.types.map((type) => (
+              <Dropdown.Item
+                onClick={() => device.setSelectedType(type)}
+                key={type.id}
+              >
+                {type.name}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
           <Form.Control
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -35,6 +61,6 @@ const CreateBrand = ({ show, onHide }) => {
       </Modal.Footer>
     </Modal>
   );
-};
+});
 
 export default CreateBrand;
