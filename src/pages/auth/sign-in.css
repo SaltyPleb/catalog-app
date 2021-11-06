@@ -176,7 +176,7 @@
 	        transform: translateX(20%);
 }
 
-.btn {
+.sign_btn {
 	background-color: var(--blue);
 	background-image: -webkit-gradient(linear, left top, right top, from(var(--blue)), color-stop(74%, var(--lightblue)));
 	background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
@@ -195,16 +195,16 @@
 	transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
 }
 
-.form > .btn {
+.form > .sign_btn {
 	margin-top: 1.5rem;
 }
 
-.btn:active {
+.sign_btn:active {
 	-webkit-transform: scale(0.95);
 	        transform: scale(0.95);
 }
 
-.btn:focus {
+.sign_btn:focus {
 	outline: none;
 }
 

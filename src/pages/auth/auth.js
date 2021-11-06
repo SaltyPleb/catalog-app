@@ -59,7 +59,7 @@ const Auth = observer(() => {
               placeholder="Password"
               className="input"
             />
-            <button type="button" className="btn" onClick={click}>
+            <button type="button" className="sign_btn" onClick={click}>
               Sign Up
             </button>
           </form>
@@ -84,7 +84,7 @@ const Auth = observer(() => {
               className="input"
             />
             <a className="link">Forgot your password?</a>
-            <button type="button" className="btn" onClick={click}>
+            <button type="button" className="sign_btn" onClick={click}>
               Sign In
             </button>
           </form>
@@ -94,12 +94,12 @@ const Auth = observer(() => {
         <div className="container__overlay">
           <div className="overlay">
             <div className="overlay__panel overlay--left">
-              <button className="btn" onClick={onSignInClick}>
+              <button className="sign_btn" onClick={onSignInClick}>
                 Sign In
               </button>
             </div>
             <div className="overlay__panel overlay--right">
-              <button className="btn" onClick={onSignInClick}>
+              <button className="sign_btn" onClick={onSignInClick}>
                 Sign Up
               </button>
               {/* need to change link after btn click */}
