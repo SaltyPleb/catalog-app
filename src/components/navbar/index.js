@@ -46,6 +46,7 @@ const Navbar = observer(() => {
               activeStyle
               onClick={() => {
                 user.setIsAuth(false);
+                localStorage.setItem('token', '')
               }}
             >
               Log Out
