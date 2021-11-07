@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../..";
 import "./styles/types.css";
-import { fetchBrands, fetchTypes } from "../../http/deviceAPI";
+import { fetchBrands, fetchOneType, fetchTypes } from "../../http/deviceAPI";
 
 const types = observer(() => {
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
     fetchBrands().then((data) => device.setBrands(data));
+    // fetchOneType(device.selectedType).then((data) => device.setOneType(data));
   }, []);
 
   const { device } = useContext(Context);
@@ -37,6 +38,8 @@ const types = observer(() => {
     );
     device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
+    fetchOneType(position).then((data) => device.setOneType(data));
+    //console.log(device.oneType.device)
     // console.log(deviceDisplay);
     // console.log(position)
   };

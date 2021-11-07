@@ -36,3 +36,8 @@ export const fetchOneDevices = async(id) => {
     return data
 }
 
+export const fetchOneType = async(id) => {
+    const {data} = await $host.get('api/type/' + id)
+    return data
+}
+

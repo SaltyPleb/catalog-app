@@ -24,9 +24,8 @@ export default class DeviceStore {
 
         ]
 
-        this._devices = [
-
-        ]
+        this._devices = []
+        this._oneType = []
         this._selectedType = {}
         this._selectedBrand = {}
 
@@ -36,6 +35,10 @@ export default class DeviceStore {
 
     setTypes(types) {
         this._types = types
+    }
+
+    setOneType(type) {
+        this._oneType = type
     }
 
     setBrands(brands) {
@@ -60,6 +63,10 @@ export default class DeviceStore {
 
     get types() {
         return this._types
+    }
+
+    get oneType(){
+        return this._oneType
     }
 
     get brands() {
