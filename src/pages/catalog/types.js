@@ -38,7 +38,8 @@ const types = observer(() => {
     );
     device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
-    fetchOneType(position).then((data) => device.setOneType(data));
+    fetchOneType(position).then((data) => device.setDeviceCardsView(data.device));
+    console.log(device.deviceCardsView)
     //console.log(device.oneType.device)
     // console.log(deviceDisplay);
     // console.log(position)

@@ -8,11 +8,10 @@ import DeviceItem from "./DeviceItem";
 const DeviceList = observer(({}) => {
   
   const { device } = useContext(Context);
-
   const history = useHistory();
   return (
     <>
-      {device.devices.map((device) =>
+      {device.deviceCardsView.map((device) =>
         <DeviceItem key={device.id} device={device}/>
         )}
     </>

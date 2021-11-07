@@ -9,12 +9,15 @@ import { Context } from ".";
 import { check } from "./http/userAPI";
 import Loader from "./components/loader/loader";
 import "../src/components/loader/loader.css"
+import { fetchDevices } from "./http/deviceAPI";
 
 const App = observer(() => {
   const { user } = useContext(Context);
+  const {device} = useContext(Context);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    fetchDevices().then(data => device.setDeviceCardsView(data.rows));
     setTimeout(() => {
       check()
         .then((data) => {

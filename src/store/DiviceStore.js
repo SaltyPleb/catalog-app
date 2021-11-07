@@ -28,9 +28,14 @@ export default class DeviceStore {
         this._oneType = []
         this._selectedType = {}
         this._selectedBrand = {}
+        this._deviceCardsView = []
 
         this._searchText = "f"
         makeAutoObservable(this)
+    }
+
+    setDeviceCardsView(devices){
+        this._deviceCardsView = devices
     }
 
     setTypes(types) {
@@ -59,6 +64,10 @@ export default class DeviceStore {
 
     setSearchText(text){
         this._searchText = text
+    }
+
+    get deviceCardsView(){
+        return this._deviceCardsView
     }
 
     get types() {
