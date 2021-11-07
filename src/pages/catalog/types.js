@@ -39,10 +39,6 @@ const types = observer(() => {
     device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
     fetchOneType(position).then((data) => device.setDeviceCardsView(data.device));
-    console.log(device.deviceCardsView)
-    //console.log(device.oneType.device)
-    // console.log(deviceDisplay);
-    // console.log(position)
   };
 
   const handlerChecked = (position) => {
@@ -56,7 +52,6 @@ const types = observer(() => {
     return device.brands.map(({ id, name, dep }) =>
       Number(position) === Number(dep) ? (
         <div key={name} className={deviceDisplay[dep] ? "" : "brand__hidden"}> 
-        {/* <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}> */}
           <div className="brand_holder ">
             <input
               className="device_checkbox"
