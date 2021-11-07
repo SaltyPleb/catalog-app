@@ -1,58 +1,61 @@
 import React, { useEffect, useState } from "react";
 import "./styles/devicepage.css";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { fetchOneDevices } from "../../http/deviceAPI";
 
-
 const DevicePage = () => {
-  const [device, setDevice] = useState({info: []})
+  const [device, setDevice] = useState({ info: [] });
 
-  const {id} = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
-    fetchOneDevices(id).then(data => setDevice(data))
-  }, [])
+    fetchOneDevices(id).then((data) => setDevice(data));
+  }, []);
 
   return (
     <div className="device_main">
-      <div class="wrapper">
-        <div class="dev_card">
-          <div class="product-left">
-            <div class="dev_header">
+      <div className="wrapper">
+        <div className="dev_card">
+          <div className="product-left">
+            <div className="dev_header">
               <h1>{device.name}</h1>
-              <h2>Raiting is {device.raiting}</h2>
+              <h2>Rating is {device.rating}</h2>
             </div>
 
-            <div class="product-main">
-              <div class="focus">
-                <span>Description</span>
-                <span>Details</span>
+            <div className="product-main">
+              <div className="focus">
+                <span style={{cursor: 'pointer'}}>Description</span>
+                <span style={{cursor: 'pointer'}}>Links</span>
               </div>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Ratione voluptatem quam vel, delectus expedita ullam asperiores
-                laudantium modi. Voluptatum eum cum quis ea modi. Reiciendis
-                asperiores aut beatae odit minima.
+                {device.info.map((info, index) => (
+                  <div
+                    key={info.id}
+                    style={{
+                      background: index % 2 === 0 ? "gray" : "transparent",
+                      padding: 10,
+                    }}
+                  >
+                    {info.title}: {info.description}
+                  </div>
+                ))}
               </p>
             </div>
 
-            <div class="product-details">
-              <div class="product-total">
+            <div className="product-details">
+              <div clclassNameass="product-total">
                 <h3>Total Price</h3>
                 <p>${device.price}</p>
               </div>
             </div>
-            <div class="product-btns">
-              <a href="#" class="product-add">
+            <div className="product-btns">
+              <a href="#" className="product-add">
                 Add To Favorite
               </a>
             </div>
           </div>
-          <div class="product-right">
-            <img
-              src={"http://localhost:5000/" + device.img}
-              alt=""
-            />
+          <div className="product-right">
+            <img src={"http://localhost:5000/" + device.img} alt="" />
           </div>
         </div>
       </div>

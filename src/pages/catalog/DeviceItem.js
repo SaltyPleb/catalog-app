@@ -28,7 +28,7 @@ const DeviceItem = ({ device }) => {
         </div>
       </div>
       <div data-body>
-        <div className="skeleton skeleton-text"></div>
+        <div className="skeleton skeleton-text">{device.info}</div>
         <div className="skeleton skeleton-text"></div>
         <div className="skeleton skeleton-text"></div>
         <div className="skeleton skeleton-text"></div>
