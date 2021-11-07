@@ -1,9 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../..";
 import "./styles/types.css";
+import { fetchBrands, fetchTypes } from "../../http/deviceAPI";
 
 const types = observer(() => {
+
+  useEffect(() => {
+    fetchTypes().then((data) => device.setTypes(data));
+    fetchBrands().then((data) => device.setBrands(data));
+  }, []);
 
   const { device } = useContext(Context);
   const [checked, setChacked] = useState(
@@ -31,8 +37,8 @@ const types = observer(() => {
     );
     device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
-    console.log(deviceDisplay[position]);
-    console.log(position)
+    // console.log(deviceDisplay);
+    // console.log(position)
   };
 
   const handlerChecked = (position) => {
