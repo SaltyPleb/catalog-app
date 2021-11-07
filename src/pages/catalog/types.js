@@ -11,11 +11,11 @@ const types = observer(() => {
   );
 
   const [devicechecked, setDeviceChacked] = useState(
-    new Array(device.devices.length).fill(false)
+    new Array(device.types.length).fill(false)
   );
 
   const [deviceDisplay, setdeviceDispaly] = useState(
-    new Array(device.devices.length).fill(false)
+    new Array(device.types.length).fill(false)
   );
 
   const handlerDeviceChecked = (position) => {
@@ -25,12 +25,14 @@ const types = observer(() => {
     setDeviceChacked(updatedDeviceCheckedState);
   };
 
-  const handlerDeviceDisplay = (position, name) => {
+  const handlerDeviceDisplay = (position) => {
     const updatedDeviceCheckedState = checked.map((item, name) =>
       name === position ? !item : item
     );
-    device.setSelectedType(position, name)
+    device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
+    console.log(deviceDisplay[position]);
+    console.log(position)
   };
 
   const handlerChecked = (position) => {
@@ -41,9 +43,9 @@ const types = observer(() => {
   };
 
   const fillDevice = (position) => {
-    return device.brands.map(({ id, name }) =>
-      position === id ? (
-        <div key={name} className={deviceDisplay[id] ? "" : ""}> 
+    return device.brands.map(({ id, name, dep }) =>
+      Number(position) === Number(dep) ? (
+        <div key={name} className={deviceDisplay[dep] ? "" : "brand__hidden"}> 
         {/* <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}> */}
           <div className="brand_holder ">
             <input
@@ -68,9 +70,9 @@ const types = observer(() => {
             <input
               // active={id === device.setSelectedType(name)}
               type="checkbox"
-              checked={type.id === device.selectedType}
+              checked={deviceDisplay[type.id]}
               onChange={() => handlerChecked(type.id)}
-              onClick={() => handlerDeviceDisplay(type.id, type.name)}
+              onClick={() => handlerDeviceDisplay(type.id)}
             />
             <span className="checkmark" />
             {type.name}
