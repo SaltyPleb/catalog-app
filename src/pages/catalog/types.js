@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../..";
 import "./styles/types.css";
-import { fetchBrands, fetchOneType, fetchTypes } from "../../http/deviceAPI";
+import { fetchBrands, fetchDevices, fetchOneType, fetchTypes } from "../../http/deviceAPI";
 
 const types = observer(() => {
 
@@ -38,10 +38,7 @@ const types = observer(() => {
     );
     device.setSelectedType(position)
     setdeviceDispaly(updatedDeviceCheckedState);
-    fetchOneType(position).then((data) => device.setOneType(data));
-    //console.log(device.oneType.device)
-    // console.log(deviceDisplay);
-    // console.log(position)
+    fetchOneType(position).then((data) => device.setDeviceCardsView(data.device));
   };
 
   const handlerChecked = (position) => {
@@ -55,7 +52,6 @@ const types = observer(() => {
     return device.brands.map(({ id, name, dep }) =>
       Number(position) === Number(dep) ? (
         <div key={name} className={deviceDisplay[dep] ? "" : "brand__hidden"}> 
-        {/* <div key={name} className={deviceDisplay[id] ? "" : "brand__hidden"}> */}
           <div className="brand_holder ">
             <input
               className="device_checkbox"
@@ -71,8 +67,17 @@ const types = observer(() => {
     );
   };
 
+  const viewAll = () => {
+    fetchDevices().then(data => device.setDeviceCardsView(data.rows));
+    const updatedDeviceCheckedState = checked.map((item) =>
+      item ? !item : item
+    );
+    setdeviceDispaly(updatedDeviceCheckedState);
+  }
+
   return (
     <div className="items">
+      <div className="label_holder" onClick={() => viewAll()}>View all</div>
       {device.types.map(type => (
         <>
           <label className="label_holder" key={type}>

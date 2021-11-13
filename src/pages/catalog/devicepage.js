@@ -27,7 +27,7 @@ const DevicePage = () => {
                 <span style={{cursor: 'pointer'}}>Description</span>
                 <span style={{cursor: 'pointer'}}>Links</span>
               </div>
-              <p>
+              {/* <p> */}
                 {device.info.map((info, index) => (
                   <div
                     key={info.id}
@@ -39,12 +39,12 @@ const DevicePage = () => {
                     {info.title}: {info.description}
                   </div>
                 ))}
-              </p>
+              {/* </p> */}
             </div>
 
             <div className="product-details">
-              <div clclassNameass="product-total">
-                <h3>Total Price</h3>
+              <div className="product-total">
+                <h3>Avarage Price</h3>
                 <p>${device.price}</p>
               </div>
             </div>
@@ -60,16 +60,6 @@ const DevicePage = () => {
         </div>
       </div>
     </div>
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     height: "90vh",
-    //   }}
-    // >
-    //   <h1>devicepage</h1>
-    // </div>
   );
 };
 
