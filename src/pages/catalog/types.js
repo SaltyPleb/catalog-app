@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../..";
 import "./styles/types.css";
-import { fetchBrands, fetchOneType, fetchTypes } from "../../http/deviceAPI";
+import { fetchBrands, fetchDevices, fetchOneType, fetchTypes } from "../../http/deviceAPI";
 
 const types = observer(() => {
 
@@ -67,8 +67,17 @@ const types = observer(() => {
     );
   };
 
+  const viewAll = () => {
+    fetchDevices().then(data => device.setDeviceCardsView(data.rows));
+    const updatedDeviceCheckedState = checked.map((item) =>
+      item ? !item : item
+    );
+    setdeviceDispaly(updatedDeviceCheckedState);
+  }
+
   return (
     <div className="items">
+      <div className="label_holder" onClick={() => viewAll()}>View all</div>
       {device.types.map(type => (
         <>
           <label className="label_holder" key={type}>
