@@ -29,6 +29,7 @@ const Auth = observer(() => {
       data = await login(email, password);
       user.setUser(user);
       user.setIsAuth(true);
+      user.setUserInfo(data);
       history.push(CATALOG_ROUTE)
     } catch (e) {alert(e.response.data.message)}
   };

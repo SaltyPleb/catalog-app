@@ -1,16 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./styles/devicepage.css";
 import { useParams } from "react-router-dom";
 import { fetchOneDevices } from "../../http/deviceAPI";
+import { insertFavorite } from "../../http/favoriteAPI";
+import { Context } from "../..";
 
 const DevicePage = () => {
   const [device, setDevice] = useState({ info: [] });
 
   const { id } = useParams();
 
+  const { user } = useContext(Context);
+
   useEffect(() => {
     fetchOneDevices(id).then((data) => setDevice(data));
   }, []);
+
+  const addToFav = () => {
+    const formData = new FormData()
+    formData.append('device_name', device.name)
+    formData.append('device_link', "link")
+    formData.append('userId', user.userInfo.id)
+    insertFavorite(formData).then(data => console.log(data));
+  }
 
   return (
     <div className="device_main">
@@ -48,7 +60,7 @@ const DevicePage = () => {
                 <p>${device.price}</p>
               </div>
             </div>
-            <div className="product-btns">
+            <div onClick={() => addToFav()} className="product-btns">
               <a href="#" className="product-add">
                 Add To Favorite
               </a>
