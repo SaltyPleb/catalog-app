@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./likes.css";
 import Rightnav from "../catalog/rightnav";
+import { Context } from "../..";
 
-const likes = () => {
+const Likes = () => {
+
+const { user } = useContext(Context);
+
+  useEffect(() => {
+    // fetchTypes().then((data) => device.setTypes(data));
+    // fetchBrands().then((data) => device.setBrands(data));
+    // fetchOneType(device.selectedType).then((data) => device.setOneType(data));
+  }, []);
+
+
+
   return (
     <>
       <Rightnav />
@@ -122,4 +134,4 @@ const likes = () => {
   );
 };
 
-export default likes;
+export default Likes;
