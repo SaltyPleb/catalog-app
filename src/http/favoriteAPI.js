@@ -6,10 +6,15 @@ export const insertFavorite = async(item) => {
     return data
 }
 
-// export const fetchTypes = async() => {
-//     const {data} = await $host.get('api/type')
-//     return data
-// }
+export const fetchFavorite = async() => {
+    const {data} = await $host.get('api/favorite')
+    return data
+}
+
+export const fetchFavoriteById = async(id) => {
+    const {data} = await $host.get('api/favorite/' + id)
+    return data
+}
 
 // export const createBrand = async(brand) => {
 //     const {data} = await $authHost.post('api/brand', brand)

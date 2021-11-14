@@ -14,7 +14,6 @@ import { ABOUT_ROUTE, ADMIN_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, SIGNIN_ROUTE, S
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
-  console.log(user);
   return (
     <>
       <Nav>

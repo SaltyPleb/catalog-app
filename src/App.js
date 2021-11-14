@@ -23,6 +23,7 @@ const App = observer(() => {
         .then((data) => {
           user.setUser(true);
           user.setIsAuth(true);
+          user.setUserInfo(data);
         })
         .finally(() => setLoading(false));
     }, 1000);
