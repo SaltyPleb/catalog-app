@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../../index.js";
+import jwt_decode from "jwt-decode";
 import {
   Nav,
   NavLink,
@@ -10,7 +11,14 @@ import {
   NavBtnLink,
 } from "./NavbarElements.js";
 import { observer } from "mobx-react-lite";
-import { ABOUT_ROUTE, ADMIN_ROUTE, CATALOG_ROUTE, CONTACT_ROUTE, SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts.js";
+import {
+  ABOUT_ROUTE,
+  ADMIN_ROUTE,
+  CATALOG_ROUTE,
+  CONTACT_ROUTE,
+  SIGNIN_ROUTE,
+  SIGNUP_ROUTE,
+} from "../../utils/consts.js";
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
@@ -30,30 +38,54 @@ const Navbar = observer(() => {
         <Bars />
 
         {user.isAuth ? (
-          <NavMenu>
-            <NavLink to={ADMIN_ROUTE} activeStyle>
-              Admin
-            </NavLink>
-            <NavLink to={ABOUT_ROUTE} activeStyle>
-              About
-            </NavLink>
-            <NavLink to={CATALOG_ROUTE} activeStyle>
-              Catalog
-            </NavLink>
-            <NavLink to={CONTACT_ROUTE} activeStyle>
-              Contact us
-            </NavLink>
-            <NavLink
-              to="/"
-              activeStyle
-              onClick={() => {
-                user.setIsAuth(false);
-                localStorage.setItem('token', '')
-              }}
-            >
-              Log Out
-            </NavLink>{" "}
-          </NavMenu>
+          jwt_decode(localStorage.getItem("token")).role === "ADMIN" ? (
+            <NavMenu>
+              <NavLink to={ADMIN_ROUTE} activeStyle>
+                Admin
+              </NavLink>
+              <NavLink to={ABOUT_ROUTE} activeStyle>
+                About
+              </NavLink>
+              <NavLink to={CATALOG_ROUTE} activeStyle>
+                Catalog
+              </NavLink>
+              <NavLink to={CONTACT_ROUTE} activeStyle>
+                Contact us
+              </NavLink>
+              <NavLink
+                to="/"
+                activeStyle
+                onClick={() => {
+                  user.setIsAuth(false);
+                  localStorage.setItem("token", "");
+                }}
+              >
+                Log Out
+              </NavLink>
+            </NavMenu>
+          ) : (
+            <NavMenu>
+              <NavLink to={ABOUT_ROUTE} activeStyle>
+                About
+              </NavLink>
+              <NavLink to={CATALOG_ROUTE} activeStyle>
+                Catalog
+              </NavLink>
+              <NavLink to={CONTACT_ROUTE} activeStyle>
+                Contact us
+              </NavLink>
+              <NavLink
+                to="/"
+                activeStyle
+                onClick={() => {
+                  user.setIsAuth(false);
+                  localStorage.setItem("token", "");
+                }}
+              >
+                Log Out
+              </NavLink>
+            </NavMenu>
+          )
         ) : (
           <NavMenu>
             {/* <NavLink to={ADMIN_ROUTE} activeStyle>

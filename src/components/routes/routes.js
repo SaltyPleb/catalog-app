@@ -10,7 +10,50 @@ import likes from "../../pages/likes/Likes";
 import Admin from "../../pages/admin/Admin";
 
 export const authRoutes = [
-    
+    {
+        path: ABOUT_ROUTE,
+        Component: About
+    },
+    {
+        path: CATALOG_ROUTE,
+        Component: Catalog
+    },
+    {
+        path: CONTACT_ROUTE,
+        Component: Contact
+    },
+    {
+        path: SIGNUP_ROUTE,
+        Component: Auth
+    },
+    {
+        path: SIGNIN_ROUTE,
+        Component: Auth
+    },
+    {
+        path: MAIN_ROUTE,
+        Component: Main
+    },
+    {
+        path: CATALOG_LIKES,
+        Component: likes
+    },
+    {
+        path: CATALOG_HISTORY,
+        Component: Main
+    },
+    {
+        path: CATALOG_CONSTRUCTOR,
+        Component: Constructor
+    },
+    {
+        path: DEVICE_ROUTE + '/:id',
+        Component: DevicePage
+    },
+    {
+        path: ADMIN_ROUTE,
+        Component: Admin
+    }
 ];
 
 export const publicRoutes = [
