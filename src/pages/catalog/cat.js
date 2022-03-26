@@ -3,6 +3,7 @@ import "./styles/catalog.css";
 import DeviceList from "./DeviceList.js";
 import Loader from "../../components/loader/loader.js";
 import Types from "./types.js";
+import TypesRe from "./TypesRe.js";
 import RightNav from "./rightnav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Context } from "../..";
@@ -47,7 +48,7 @@ const cat = observer(() => {
           <div className="grid_leftcolumn">
             <div className="filter_wrapper">
               <div className="sheema_filter">
-                <Types />
+                <TypesRe />
               </div>
             </div>
           </div>

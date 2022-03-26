@@ -5,6 +5,7 @@ import "./styles/types.css";
 import { fetchBrands, fetchDevices, fetchOneType, fetchTypes } from "../../http/deviceAPI";
 
 const types = observer(() => {
+  const { device } = useContext(Context);
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
@@ -12,7 +13,6 @@ const types = observer(() => {
     // fetchOneType(device.selectedType).then((data) => device.setOneType(data));
   }, []);
 
-  const { device } = useContext(Context);
   const [checked, setChacked] = useState(
     new Array(device.brands.length).fill(false)
   );
