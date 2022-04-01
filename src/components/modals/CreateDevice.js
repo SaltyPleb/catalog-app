@@ -8,6 +8,7 @@ const CreateDevice = observer(({ show, onHide }) => {
   const { device } = useContext(Context);
   const [info, setInfo] = useState([]);
   const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState('');
 
@@ -42,6 +43,7 @@ const CreateDevice = observer(({ show, onHide }) => {
     formData.append('brandId', device.selectedBrand.id)
     formData.append('typeId', device.selectedType.id)
     formData.append('info', JSON.stringify(info))
+    formData.append('desc', desc)
     createDevice(formData).then(data => onHide());
   };
 
@@ -97,6 +99,12 @@ const CreateDevice = observer(({ show, onHide }) => {
           className="mt-3"
           placeholder="Enter device price"
           type="number"
+        />
+        <Form.Control
+          velue={desc}
+          onChange={(e) => setDesc(e.target.value)}
+          className="mt-3"
+          placeholder="Enter device description"
         />
         <Form.Control onChange={selectFile} className="mt-3" type="file" />
 

@@ -27,12 +27,16 @@ const DeviceItem = ({ device }) => {
           )}
         </div>
       </div>
-      <div data-body>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-        <div className="skeleton skeleton-text"></div>
-      </div>
+      {device.desc ? (
+        <div className="description" data-body>{device.desc}</div>
+      ) : (
+        <div data-body>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+          <div className="skeleton skeleton-text"></div>
+        </div>
+      )}
     </div>
   );
 };
