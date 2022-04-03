@@ -41,7 +41,6 @@ const cat = observer(() => {
             <div className= {device.searchText ? "search__results search_view" : "search__results"}>
               <Search/>
             </div>
-            {/* <a href="#" class="close" /> */}
           </div>
         </div>
         <div className="middle_grid">

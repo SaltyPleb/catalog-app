@@ -73,13 +73,13 @@ const TypesRe = observer(() => {
             <label>
               <input
                 type="checkbox"
-                class="default__check"
+                className="default__check"
                 value={name}
                 // onChange={typeCheck}
                 checked={isTypeChecked(name)}
                 disabled
               />
-              <span class="custom__check"></span>
+              <span className="custom__check"></span>
             </label>
 
             <div>{name}</div>
@@ -94,12 +94,12 @@ const TypesRe = observer(() => {
                     <label>
                       <input
                         type="checkbox"
-                        class="default__check"
+                        className="default__check"
                         value={name}
                         onClick={brandCheck}
                         checked={isBrandChecked(name)}
                       />
-                      <span class="custom__check"></span>
+                      <span className="custom__check"></span>
                     </label>
                     <div className="brand__name">{name}</div>
                   </div>

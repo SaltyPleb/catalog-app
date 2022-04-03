@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./likes.css";
+// import "./likes.css";
 import Rightnav from "../catalog/rightnav";
 import { Context } from "../..";
 import { fetchFavorite, fetchFavoriteById } from "../../http/favoriteAPI";

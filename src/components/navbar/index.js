@@ -40,21 +40,21 @@ const Navbar = observer(() => {
         {user.isAuth ? (
           jwt_decode(localStorage.getItem("token")).role === "ADMIN" ? (
             <NavMenu>
-              <NavLink to={ADMIN_ROUTE} activeStyle>
+              <NavLink to={ADMIN_ROUTE} >
                 Admin
               </NavLink>
-              <NavLink to={ABOUT_ROUTE} activeStyle>
+              <NavLink to={ABOUT_ROUTE} >
                 About
               </NavLink>
-              <NavLink to={CATALOG_ROUTE} activeStyle>
+              <NavLink to={CATALOG_ROUTE} >
                 Catalog
               </NavLink>
-              <NavLink to={CONTACT_ROUTE} activeStyle>
+              <NavLink to={CONTACT_ROUTE} >
                 Contact us
               </NavLink>
               <NavLink
                 to="/"
-                activeStyle
+                
                 onClick={() => {
                   user.setIsAuth(false);
                   localStorage.setItem("token", "");
@@ -65,18 +65,18 @@ const Navbar = observer(() => {
             </NavMenu>
           ) : (
             <NavMenu>
-              <NavLink to={ABOUT_ROUTE} activeStyle>
+              <NavLink to={ABOUT_ROUTE} >
                 About
               </NavLink>
-              <NavLink to={CATALOG_ROUTE} activeStyle>
+              <NavLink to={CATALOG_ROUTE} >
                 Catalog
               </NavLink>
-              <NavLink to={CONTACT_ROUTE} activeStyle>
+              <NavLink to={CONTACT_ROUTE} >
                 Contact us
               </NavLink>
               <NavLink
                 to="/"
-                activeStyle
+                
                 onClick={() => {
                   user.setIsAuth(false);
                   localStorage.setItem("token", "");
@@ -91,16 +91,16 @@ const Navbar = observer(() => {
             {/* <NavLink to={ADMIN_ROUTE} activeStyle>
               Admin
             </NavLink> */}
-            <NavLink to={ABOUT_ROUTE} activeStyle>
+            <NavLink to={ABOUT_ROUTE} >
               About
             </NavLink>
-            <NavLink to={CATALOG_ROUTE} activeStyle>
+            <NavLink to={CATALOG_ROUTE} >
               Catalog
             </NavLink>
-            <NavLink to={CONTACT_ROUTE} activeStyle>
+            <NavLink to={CONTACT_ROUTE} >
               Contact us
             </NavLink>
-            <NavLink to={SIGNUP_ROUTE} activeStyle>
+            <NavLink to={SIGNUP_ROUTE} >
               Sign up
             </NavLink>{" "}
             <NavBtnLink

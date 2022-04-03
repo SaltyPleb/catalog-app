@@ -8,6 +8,7 @@ import Constructor from "../../pages/constructor/constructor";
 import DevicePage from "../../pages/catalog/devicepage";
 import likes from "../../pages/likes/Likes";
 import Admin from "../../pages/admin/Admin";
+import Favorite from "../../pages/favorite/Favorite";
 
 export const authRoutes = [
     {
@@ -83,7 +84,7 @@ export const publicRoutes = [
     },
     {
         path: CATALOG_LIKES,
-        Component: likes
+        Component: Favorite
     },
     {
         path: CATALOG_HISTORY,

@@ -8,6 +8,9 @@ const rightnav = () => {
         <Link to="/catalog/likes" className="right_btn text__shadow">
           Likes
         </Link>
+        {/* <Link to="/catalog/likes" className="right_btn text__shadow">
+          Likes
+        </Link> */}
         <Link to="/catalog/constructor" className="right_btn text__shadow">
           Constructor
         </Link>

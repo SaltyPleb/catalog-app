@@ -6,7 +6,7 @@
   height: 88vh;
   margin: 3vh auto;
   background: hsl(200, 20%, 90%);
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   padding: 30px;
   flex-wrap: wrap;
@@ -24,6 +24,7 @@ hr {
 
 .device_img {
   max-width: 250px;
+  max-height: 250px;
   position: absolute;
 }
 
@@ -168,7 +169,7 @@ hr {
 .product-left {
   height: 100%;
   width: 70%;
-  padding: 4rem 2rem;
+  padding: 2rem 1.5rem;
   border-top-left-radius: 0.8rem;
   border-bottom-left-radius: 0.8rem;
   display: flex;
@@ -189,12 +190,14 @@ hr {
 }
 
 .product-right img {
+  max-width: 480px;
+  max-height: 480px;
   height: 30rem;
 }
 
 .dev_header h1 {
   text-transform: uppercase;
-  margin: 2rem 0;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
 }
 
@@ -208,6 +211,29 @@ hr {
   margin: 2rem 0;
   line-height: 1.45;
 }
+
+.product-main .description_list {
+  max-height: 320px;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* scroll */
+}
+
+::-webkit-scrollbar{
+  width: .8rem;
+}
+::-webkit-scrollbar-track{
+  background: #89ABE3FF;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+  background: #FCF6F5FF;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d8cfcf; 
+}
+
 
 .focus {
   text-transform: uppercase;
@@ -242,7 +268,9 @@ hr {
 }
 
 .product-total h3 {
-  margin: 0 0 1rem 0;
+  border-top: 0.15rem solid rgba(250, 250, 250, 0.3);
+  margin: 1rem 0 1rem 0;
+  padding-top: 1rem;
 }
 
 .product-add {

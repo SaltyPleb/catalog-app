@@ -15,7 +15,7 @@ const DevicePage = () => {
   useEffect(() => {
     fetchOneDevices(id).then((data) => setDevice(data));
   }, []);
-
+  
   const addToFav = () => {
     const formData = new FormData()
     formData.append('device_name', device.name)
@@ -40,17 +40,19 @@ const DevicePage = () => {
                 <span style={{cursor: 'pointer'}}>Links</span>
               </div>
               {/* <p> */}
+              <div className="description_list">
                 {device.info.map((info, index) => (
-                  <div
-                    key={info.id}
-                    style={{
-                      background: index % 2 === 0 ? "gray" : "transparent",
-                      padding: 10,
-                    }}
-                  >
-                    {info.title}: {info.description}
-                  </div>
+                    <div
+                      key={info.id}
+                      style={{
+                        background: index % 2 === 0 ? "gray" : "transparent",
+                        padding: 10,
+                      }}
+                    >
+                      {info.title}: {info.description}
+                    </div>
                 ))}
+                </div>
               {/* </p> */}
             </div>
 
@@ -67,7 +69,7 @@ const DevicePage = () => {
             </div>
           </div>
           <div className="product-right">
-            <img src={"http://localhost:5000/" + device.img} alt="" />
+            <img className="device-image" src={process.env.REACT_APP_API_VERSION_URL + device.img} alt="" />
           </div>
         </div>
       </div>

@@ -2,15 +2,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  width: 95%;
-  height: 93%;
+  height: calc(100% - 60px);
   position: absolute;
   background-size: cover;
 }
 
 .about_img {
-  max-width: 100%;
-  object-fit: cover;
+  /* max-width: 100%; */
+  position: relative;
+  height: 100%;
+  /* top: 10px;  */
+  object-fit:fill;
+  /* background-size: 100% 100%; */
   
 }
 
