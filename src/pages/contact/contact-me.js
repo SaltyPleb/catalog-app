@@ -34,6 +34,21 @@ const Contact = () => {
 
         <div className="contact_column">
           <div className="contact_card">
+            <img src={logo1} alt="Yauheni" style={{width:'100%'}} />
+            <div className="contact_container">
+              <h2 style={{marginTop: '16px'}}>Yauheni Bulyha</h2>
+              <p style={{marginTop: '16px'}} className="title">Full Stack engineer(Not yet, but soon)</p>
+              <p style={{marginTop: '16px'}}>A person who born for solving problems and providing workable solutions. Strong analytical and reasoning skills with an ability to visualise processes and outcomes.</p>
+              <p style={{marginTop: '16px'}}>sergun4ik22@gmail.com</p>
+              <p style={{marginTop: '16px'}}>
+                <button className="contact_button">Contact</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="contact_column">
+          <div className="contact_card">
             <img src={logo2} alt="Sonya" style={{width:'100%'}} />
             <div className="contact_container">
               <h2 style={{marginTop: '16px'}}>Sofya Shkuratova</h2>
