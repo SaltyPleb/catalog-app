@@ -6,7 +6,7 @@ const Constructor = () => {
   return (
     <>
       <div className="constructor_main">
-        <Rightnav />
+        {/* <Rightnav /> */}
         <div className="selected_items">
           <div className="lv_name">Selected items</div>
           <div className="selection_block">

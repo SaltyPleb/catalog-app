@@ -53,7 +53,7 @@ const Favorite = observer(() => {
 
                 <div className="item__price">
                   <div className="label">Price</div>
-                  <div className="name">600$</div>
+                  <div className="name">{info.device.price}</div>
                 </div>
 
                 <div className="item__release">
@@ -65,13 +65,13 @@ const Favorite = observer(() => {
                 <div className="item__rating">
                   <div className="label">Rating</div>
                   <div className="name">
-                    This product have 5 stars rating and 142 times votes
+                    {info.device.desc}
                   </div>
                 </div>
               </div>
 
               <div className="item_btns">
-                <div className="item-btn green">More Info</div>
+                <a className="item-btn green" href={process.env.SERVER_API_VERSION_URL+"/device/"+info.device.id}>More Info</a>
                 <div className="item-btn">View Links</div>
                 <div className="item-btn red">Delete</div>
               </div>
