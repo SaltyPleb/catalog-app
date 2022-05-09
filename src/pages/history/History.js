@@ -1,8 +1,20 @@
-import React from "react";
+import { observer } from "mobx-react-lite";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../..";
+import { fetchHistoryByUserId } from "../../http/historyAPI";
 import arrow from "../../images/static/arrow.png";
-import Icon from "../../utils/Icon"
+import Icon from "../../utils/Icon";
 
-const History = () => {
+const History = observer(() => {
+  const [historyInfo, setHistoryInfo] = useState([]);
+
+  const { user } = useContext(Context);
+
+  useEffect(() => {
+    fetchHistoryByUserId(user.userInfo.id).then((data) => setHistoryInfo(data));
+    console.log(historyInfo);
+  }, []);
+
   return (
     <div className="history">
       <div className="history__header">
@@ -13,6 +25,7 @@ const History = () => {
       </div>
       <div className="history__items">
         <div className="item">
+          <input type="checkbox" />
           <div className="item__top">
             <div className="date">Today - Tuesday, April 09, 2022</div>
             <div className="i-box">
@@ -21,100 +34,92 @@ const History = () => {
           </div>
           <div className="item__gap" />
           <div className="item__rows">
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <a href="http://localhost:3000/catalog/device/4" target="_blank" rel="noreferrer" className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf
-                  </a>
-                  <div className="info-wrap__link">www.rtx.com</div>
+            {historyInfo.map(({ id, link, device, favorite, updatedAt }) => (
+              <div className="row">
+                <div className="row__time">
+                  {updatedAt
+                    .split("T")[1]
+                    .split(".")[0]
+                    .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")}
                 </div>
-              </div>
-              <div className="icons-wrap">
-                <div className="i-box">
-                  <Icon name="icon-heart-o" color="pink" size={20} />
-                </div>
-                <div className="i-box">
-                  <Icon name="menu" color="gray" size={30} />
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <div className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf fsoidj  sdofj oisdjf ois difjs isdi fjsdi jfois djfosdj fosjd o
+                <div className="row__info">
+                  <div className="info-wrap">
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="info-wrap__name"
+                    >
+                      {device}
+                    </a>
+                    <div className="info-wrap__link">www.nvidea.com</div>
                   </div>
-                  <div className="info-wrap__link">www.rtx.com</div>
-                  
                 </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <div className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf
+                <div className="icons-wrap">
+                  {favorite ? (
+                    <div className="i-box">
+                      <Icon name="icon-heart-o" color="pink" size={20} />
+                    </div>
+                  ) : null}
+                  <div className="i-box">
+                    <Icon name="menu" color="gray" size={30} />
                   </div>
-                  <div className="info-wrap__link">www.rtx.com</div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
+
         <div className="item">
+          <input type="checkbox" />
           <div className="item__top">
             <div className="date">Today - Tuesday, April 09, 2022</div>
-            <img className="icon " src={arrow} />
+            <div className="i-box">
+              <img className="icon " src={arrow} />
+            </div>
           </div>
           <div className="item__gap" />
           <div className="item__rows">
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <div className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf
+            {historyInfo.map(({ id, link, device, favorite, updatedAt }) => (
+              <div className="row">
+                <div className="row__time">
+                  {updatedAt
+                    .split("T")[1]
+                    .split(".")[0]
+                    .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")}
+                </div>
+                <div className="row__info">
+                  <div className="info-wrap">
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="info-wrap__name"
+                    >
+                      {device}
+                    </a>
+                    <div className="info-wrap__link">www.nvidea.com</div>
                   </div>
-                  <div className="info-wrap__link">www.rtx.com</div>
+                </div>
+                <div className="icons-wrap">
+                  {favorite ? (
+                    <div className="i-box">
+                      <Icon name="icon-heart-o" color="pink" size={20} />
+                    </div>
+                  ) : null}
+                  <div className="i-box">
+                    <Icon name="menu" color="gray" size={30} />
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <div className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf fsoidj  sdofj oisdjf ois difjs isdi fjsdi jfois djfosdj fosjd o
-                  </div>
-                  <div className="info-wrap__link">www.rtx.com</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="row__time">2:20 PM</div>
-              <div className="row__info">
-                <div className="info-wrap">
-                  <div className="info-wrap__name">
-                    RTX 3090 Tim qoursdha n sdknf
-                  </div>
-                  <div className="info-wrap__link">www.rtx.com</div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+        
       </div>
     </div>
   );
-};
+});
 
 export default History;
