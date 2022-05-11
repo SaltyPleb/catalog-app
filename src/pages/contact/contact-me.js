@@ -49,12 +49,12 @@ const Contact = () => {
 
         <div className="contact_column">
           <div className="contact_card">
-            <img src={logo2} alt="Sonya" style={{width:'100%'}} />
+            <img src={logo1} alt="Sonya" style={{width:'100%'}} />
             <div className="contact_container">
-              <h2 style={{marginTop: '16px'}}>Sofya Shkuratova</h2>
+              <h2 style={{marginTop: '16px'}}>Yauheni Bulyha</h2>
               <p style={{marginTop: '16px'}} className="title">Only this page Designer:)</p>
               <p style={{marginTop: '16px'}}>Color theory introducer. Ideas about the best uses of color. Many different theories on color exist that help understand how to combine colors and the effect different colors have on people.</p>
-              <p style={{marginTop: '16px'}}>sonykkk@gmail.com</p>
+              <p style={{marginTop: '16px'}}>sergun4ik22@gmail.com</p>
               <p style={{marginTop: '16px'}}>
                 <button className="contact_button">Contact</button>
               </p>
