@@ -15,8 +15,8 @@ const Favorite = observer(() => {
 
   return (
     <div className="favorite">
-      {user.isAuth ? (
-        <>
+    {user.isAuth ? (
+      <>
           {/* TODO: Insert this code to new component */}
           <div className="favorite__top">
             <div className="h-name">Favorite</div>
