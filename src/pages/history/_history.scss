@@ -39,6 +39,7 @@
             box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 
             &__gap {
+                transition: 0.55s ease-in-out;
                 opacity: 0;
                 position: absolute;
                 left: 0;
@@ -156,9 +157,14 @@ input[type=checkbox]:checked~.item__top>.i-box>img {
 input[type=checkbox]:checked~.item__rows {
     opacity: 1;
     margin-top: 1.7rem;
-    max-height: 1000px;
     transition: max-height 0.55s ease-in-out;
     transition: 0.55s ease-in-out;
+
+    @for $m from 0 through 1000 {
+        &.length-#{$m} {
+            max-height: calc(35px * $m);
+        }
+    }
 }
 
 input[type=checkbox]:checked~.item__gap {

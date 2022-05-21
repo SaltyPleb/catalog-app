@@ -4,7 +4,8 @@ import { Context } from "../..";
 import { fetchHistoryByUserId } from "../../http/historyAPI";
 import arrow from "../../images/static/arrow.png";
 import Icon from "../../utils/Icon";
-import Unauthorized from "../403/unauthorized";
+import Unauthorized from "../403/Unauthorized";
+import HistoryItem from "./HistoryItem";
 
 const History = observer(() => {
   const [historyInfo, setHistoryInfo] = useState([]);
@@ -27,55 +28,9 @@ const History = observer(() => {
             </div>
           </div>
           <div className="history__items">
-            <div className="item">
-              <input type="checkbox" />
-              <div className="item__top">
-                <div className="date">Today - Tuesday, April 09, 2022</div>
-                <div className="i-box">
-                  <img className="icon " src={arrow} />
-                </div>
-              </div>
-              <div className="item__gap" />
-              <div className="item__rows">
-                {historyInfo.map(
-                  ({ id, link, device, favorite, updatedAt }) => (
-                    <div className="row">
-                      <div className="row__time">
-                        {updatedAt
-                          .split("T")[1]
-                          .split(".")[0]
-                          .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")}
-                      </div>
-                      <div className="row__info">
-                        <div className="info-wrap">
-                          <a
-                            href={link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="info-wrap__name"
-                          >
-                            {device}
-                          </a>
-                          <div className="info-wrap__link">www.nvidea.com</div>
-                        </div>
-                      </div>
-                      <div className="icons-wrap">
-                        {favorite ? (
-                          <div className="i-box">
-                            <Icon name="icon-heart-o" color="pink" size={20} />
-                          </div>
-                        ) : null}
-                        <div className="i-box">
-                          <Icon name="menu" color="gray" size={30} />
-                        </div>
-                      </div>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
+            {historyInfo.map((item) => HistoryItem(item))}
 
-            <div className="item">
+            {/* <div className="item">
               <input type="checkbox" />
               <div className="item__top">
                 <div className="date">Today - Tuesday, April 09, 2022</div>
@@ -121,7 +76,7 @@ const History = observer(() => {
                   )
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
         </>
       ) : (
