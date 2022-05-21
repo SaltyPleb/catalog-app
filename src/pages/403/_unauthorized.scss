@@ -50,6 +50,24 @@
             }
         }
     }
+}
 
-
+.bar-wrapper {
+    // position: absolute;
+    background-color: rgb(251, 76, 76);
+    width: 100%;
+    height: 45px;
+    // border-radius: 0 0 .5rem .5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: .5rem;
+    
+    &>div{
+        margin-left: .5rem;
+        font-size: 16pt;
+    }
+    &__type {
+        font-weight: bold;
+    }
 }

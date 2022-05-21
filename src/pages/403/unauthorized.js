@@ -2,7 +2,7 @@ import React from "react";
 import e403 from "../../images/error.png";
 import { SIGNIN_ROUTE, SIGNUP_ROUTE } from "../../utils/consts";
 
-const unauthorized = () => {
+const Unauthorized = () => {
   return (
     <div className="un-main">
       <img className="un-main__img" src={e403}></img>
@@ -23,4 +23,4 @@ const unauthorized = () => {
   );
 };
 
-export default unauthorized;
+export default Unauthorized;
