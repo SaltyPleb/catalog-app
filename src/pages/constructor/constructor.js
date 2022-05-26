@@ -1,12 +1,17 @@
 import React from "react";
 import Rightnav from "../catalog/rightnav";
+import ClientSystem from "./ClientSystem";
 import "./constructor.css";
+import LeftNav from "./LeftNav";
 
 const Constructor = () => {
   return (
     <>
-      <div className="constructor_main">
-        {/* <Rightnav /> */}
+    <div className="system-container">
+      <LeftNav />
+      <ClientSystem />
+    </div>
+      {/* <div className="constructor_main">
         <div className="selected_items">
           <div className="lv_name">Selected items</div>
           <div className="selection_block">
@@ -32,19 +37,7 @@ const Constructor = () => {
         </div>
         <div className="main">
           <div className="component_bloks">
-            {/* <div className="components">
-            //  need to make it better or just delete 
-              <div className="component_name">GPU</div>
-              <div className="component_name">CPU</div>
-              <div className="component_name">Motherboard</div>
-              <div className="component_name">RAM</div>
-              <div className="component_name">Storage</div>
-              <div className="component_name">Cooling(CPU)</div>
-              <div className="component_name">Power supply</div>
-              <div className="component_name">Case</div>
-            </div> */}
-            
-            {/* remove this to separate js component*/}
+
             <div className="pluses">
               <div className="comp_block">
                 <div className="component_name">GPU</div>
@@ -104,7 +97,6 @@ const Constructor = () => {
             </div>
           </div>
           <div className="search_results">
-            {/* draft */}
             <div className="res_cards">
               <div className="serach_card">
                 <img
@@ -217,7 +209,7 @@ const Constructor = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

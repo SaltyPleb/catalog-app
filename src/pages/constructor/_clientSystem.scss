@@ -1,0 +1,260 @@
+.client-system {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .navigation {
+        padding: 1rem 1.5rem;
+        box-shadow: 0 7px 5px -5px rgba(30, 129, 204, 0.2);
+        display: flex;
+        justify-content: space-between;
+
+        &__url {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            padding-top: .5rem;
+
+            :first-child {
+                color: $cool-gray-color;
+            }
+
+            :last-child {
+                margin-left: 8px;
+                font-weight: bold;
+            }
+        }
+
+        &__btns {
+            display: flex;
+            align-items: center;
+            gap: 1.7rem;
+
+            .c-btn {
+                position: relative;
+                cursor: pointer;
+                gap: .7rem;
+                display: flex;
+                color: $cool-gray-color;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(to right, #8e2de2, #4a00e0);
+                    transform-origin: right;
+                    transform: scaleX(0);
+                    transition: transform 0.4s;
+                }
+
+                &:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+
+                &:hover {
+                    color: $pink-color !important;
+
+                    &>svg {
+                        fill: $pink-color !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .construct {
+        height: calc(100% - 5.1rem);
+        position: relative;
+        display: flex;
+
+        &__left {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // width: 25%;
+            width: 350px;
+            // box-shadow: 0 7px 5px -5px rgba(30, 129, 204, 0.2);
+            box-shadow: 5px 0 10px -5px rgba(53, 61, 67, 0.2);
+
+            .types {
+                // margin-top: 1rem;
+                padding-top: 1rem;
+
+                .type {
+                    display: flex;
+                    padding: 1rem 1.5rem;
+                    gap: 1rem;
+                    color: $cool-gray-color;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #f7f6fd;
+                        border-radius: $border-radius;
+                        margin: 0 1rem 0 .5rem;
+                        padding-left: 1rem !important;
+                    }
+                }
+
+                .selected {
+                    font-weight: bold;
+                    color: black !important;
+                    background-color: $cool-light-green-color !important;
+                    border-radius: $border-radius;
+                    margin: 0 1rem 0 .5rem;
+                    padding-left: 1rem !important;
+                }
+            }
+
+            .notes {
+
+                .n-wrapper {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 1.5rem;
+                    justify-content: space-between;
+                    font-weight: bold;
+                    box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+
+                    .i-box {
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        z-index: 9;
+
+                        &>img {
+                            max-width: 15px;
+                            max-height: 15px;
+                            transform: rotate(180deg);
+                        }
+
+                        &:hover {
+                            border-radius: 50%;
+                            background-color: rgba(0, 0, 0, 0.08);
+                        }
+                    }
+                }
+            }
+
+            .c-reset {
+                display: flex;
+                padding: 1.5rem 1.5rem;
+                gap: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: $red-color !important;
+
+                    &>svg {
+                        fill: $red-color !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.checkmark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+
+    &__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #7ac142;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    &__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @keyframes stroke {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes scale {
+
+        0%,
+        100% {
+            transform: none;
+        }
+
+        50% {
+            transform: scale3d(1.1, 1.1, 1);
+        }
+    }
+
+    @keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 30px #7ac142;
+        }
+    }
+}
+
+.component-container {
+
+    padding: 1.5rem;
+
+    .component {
+        border-radius: $border-radius;
+        position: relative;
+        padding: 1rem;
+        width: 450px;
+        height: 450px;
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        &__header {
+            font-weight: bold;
+            .name {
+                margin-bottom: 1rem;
+            }
+
+            .rating {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        &__img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &>img{
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+
+        &__footer {
+            
+        }
+    }
+}
