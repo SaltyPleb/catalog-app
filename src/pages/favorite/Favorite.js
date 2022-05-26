@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../";
 import { fetchFavorite, fetchFavoriteById } from "../../http/favoriteAPI";
-import Unauthorized from "../403/unauthorized";
+import Unauthorized from "../403/Unauthorized";
 
 const Favorite = observer(() => {
   const [favoriteInfo, setFavoriteInfo] = useState([]);
