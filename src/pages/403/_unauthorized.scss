@@ -1,6 +1,6 @@
 .un-main {
     position: absolute;
-    height: calc(100% );
+    height: calc(100%);
     width: 100%;
     background-color: #fff;
     top: 0;
@@ -16,8 +16,9 @@
         justify-content: center;
         display: flex;
         flex-direction: column;
-        
-        &>div, h1 {
+
+        &>div,
+        h1 {
             margin: 0 auto;
             color: #3b3377;
             font-size: 38pt;
@@ -27,6 +28,7 @@
             margin: 20px 0;
             font-weight: bold;
         }
+
         div {
             justify-content: center;
             align-items: center;
@@ -37,6 +39,7 @@
     &__btns {
         padding: 50px;
         margin-bottom: 100px;
+
         .btn {
             margin: 0 20px;
             color: white !important;
@@ -62,11 +65,12 @@
     align-items: center;
     display: flex;
     padding: .5rem;
-    
-    &>div{
+
+    &>div {
         margin-left: .5rem;
         font-size: 16pt;
     }
+
     &__type {
         font-weight: bold;
     }
