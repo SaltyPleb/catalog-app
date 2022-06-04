@@ -9,6 +9,7 @@ import ComponentCards from "./ComponentCards";
 const ClientSystem = observer(() => {
   const { device, user } = useContext(Context);
   const [checked, setChecked] = useState(false);
+  const [selectedType, setSelectedType] = useState(1);
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
@@ -55,6 +56,10 @@ const ClientSystem = observer(() => {
     // );
   };
 
+  const getSelected = (id) => {
+    selectedType == id ? setSelectedType(id) : setSelectedType(id);
+  };
+
   return (
     <div className="client-system">
       <div className="navigation">
@@ -81,34 +86,17 @@ const ClientSystem = observer(() => {
         <div className="construct__left">
           <div className="t-container">
             <div className="types">
-              <div onClick={() => setChecked(!checked)} className="type">
-                <div className="status">{checkMark()}</div>
-                <div className="type-name">CPU</div>
-              </div>
-              <div className="type selected">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">GPU</div>
-              </div>
-              <div className="type">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">Mother</div>
-              </div>
-              <div className="type">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">Memory</div>
-              </div>
-              <div className="type">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">Hard</div>
-              </div>
-              <div className="type">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">Power</div>
-              </div>
-              <div className="type">
-                <div className="status">{checkMark(true)}</div>
-                <div className="type-name">Case</div>
-              </div>
+              {device.types.map(({ id, name }, index) => (
+                <div
+                  // onClick={() => setChecked(!checked)}
+                  onClick={() => getSelected(id)}
+                  key={index}
+                  className={`type ${selectedType == id ? "selected" : null}`}
+                >
+                  <div className="status">{checkMark()}</div>
+                  <div className="type-name">{name}</div>
+                </div>
+              ))}
             </div>
 
             <div className="notes">
@@ -128,7 +116,7 @@ const ClientSystem = observer(() => {
           </div>
         </div>
         <div className="construct__main">
-            <ComponentCards />
+          <ComponentCards selectedType={selectedType}/>
         </div>
       </div>
     </div>
