@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../images/193940.jpg";
-import "./about.css";
+// import "./about.css";
 import logo1 from "../../images/lets-get-started-no-line.png";
 
 const About = () => {
