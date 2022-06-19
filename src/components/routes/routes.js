@@ -16,7 +16,7 @@ import {
   SIGNIN_ROUTE,
   SIGNUP_ROUTE,
 } from "../../utils/consts";
-import Constructor from "../../pages/constructor/constructor";
+import Constructor from "../../pages/constructor/";
 import DevicePage from "../../pages/device-page/devicepage";
 // import likes from "../../pages/likes/Likes";
 import Admin from "../../pages/admin/Admin";

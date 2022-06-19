@@ -4,26 +4,25 @@ import { useHistory, useLocation } from "react-router";
 import { Context } from "../..";
 import { login, registration } from "../../http/userAPI";
 import { CATALOG_ROUTE, SIGNIN_ROUTE } from "../../utils/consts";
-import "./sign-in.css";
 
 const Auth = observer(() => {
   const { user } = useContext(Context);
   const locatinon = useLocation();
   const history = useHistory();
   const isLogin = locatinon.pathname === SIGNIN_ROUTE;
-  const [className, setclassName] = useState(
+  const [className, setClassName] = useState(
     isLogin ? "container-si" : "container-si right-panel-active"
   );
-  const onSignInClick = () => {
+  const onsignInClick = () => {
     className === "container-si right-panel-active"
-      ? setclassName("container-si")
-      : setclassName("container-si right-panel-active");
+      ? setClassName("container-si")
+      : setClassName("container-si right-panel-active");
   };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const SignInclick = async () => {
+  const signInClick = async () => {
     try {
       let data;
       data = await login(email, password);
@@ -34,7 +33,7 @@ const Auth = observer(() => {
     } catch (e) {alert(e.response.data.message)}
   };
 
-  const SignUpclick = async () => {
+  const signUpClick = async () => {
     try {
       let data;
       data = await registration(email, password);
@@ -66,7 +65,7 @@ const Auth = observer(() => {
               placeholder="Password"
               className="input"
             />
-            <button type="button" className="sign_btn" onClick={SignUpclick}>
+            <button type="button" className="sign_btn" onClick={signUpClick}>
               Sign Up
             </button>
           </form>
@@ -91,7 +90,7 @@ const Auth = observer(() => {
               className="input"
             />
             <a className="link">Forgot your password?</a>
-            <button type="button" className="sign_btn" onClick={SignInclick}>
+            <button type="button" className="sign_btn" onClick={signInClick}>
               Sign In
             </button>
           </form>
@@ -101,12 +100,12 @@ const Auth = observer(() => {
         <div className="container__overlay">
           <div className="overlay">
             <div className="overlay__panel overlay--left">
-              <button className="sign_btn" onClick={onSignInClick}>
+              <button className="sign_btn" onClick={onsignInClick}>
                 Sign In
               </button>
             </div>
             <div className="overlay__panel overlay--right">
-              <button className="sign_btn" onClick={onSignInClick}>
+              <button className="sign_btn" onClick={onsignInClick}>
                 Sign Up
               </button>
               {/* need to change link after btn click */}
