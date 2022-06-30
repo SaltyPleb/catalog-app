@@ -11,6 +11,7 @@ import {
   NavBtnLink,
 } from "./NavbarElements.js";
 import { observer } from "mobx-react-lite";
+import { NavLink as Link } from "react-router-dom";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
@@ -33,7 +34,7 @@ const Navbar = observer(() => {
             width="40"
             alt="img"
           />
-          <h1 className="nav-name">Salty Salty app</h1>
+          <h1 classNameName="nav-name">Salty Salty app</h1>
         </NavLink>
         <Bars />
 
@@ -71,23 +72,42 @@ const Navbar = observer(() => {
             </NavMenu>
           )
         ) : (
-          <NavMenu>
-            {/* <NavLink to={ADMIN_ROUTE} activeStyle>
-              Admin
-            </NavLink> */}
-            <NavLink to={ABOUT_ROUTE}>About</NavLink>
-            <NavLink to={CATALOG_ROUTE}>Catalog</NavLink>
-            <NavLink to={CONTACT_ROUTE}>Contact us</NavLink>
-            <NavLink to={SIGNUP_ROUTE}>Sign up</NavLink>
-            <NavBtnLink
-              to={SIGNIN_ROUTE}
-              // onClick={() => {
-              //   user.setIsAuth(true);
-              // }}
-            >
-              Sign In
-            </NavBtnLink>
-          </NavMenu>
+          <div className="cons">
+            <ul className="top_nav top_navbar-nav">
+              <li>
+                <a href="#!">Services</a>
+                <ul className="innernav">
+                  <li>
+                    <Link to={CONTACT_ROUTE}>Contact us</Link>
+                  </li>
+                  <li>
+                    <a href="#!">Test Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Test Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Test Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Test Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Test Link 1</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">Services</a>
+              </li>
+              <li>
+                <a href="#!">Blog</a>
+              </li>
+              <li>
+                <a href="#!">Contact us</a>
+              </li>
+            </ul>
+          </div>
         )}
 
         {/* <NavBtn>
