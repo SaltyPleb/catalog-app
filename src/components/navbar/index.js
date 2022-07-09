@@ -5,10 +5,7 @@ import {
   Nav,
   NavLink,
   Bars,
-  NavMenu,
   // eslint-disable-next-line
-  NavBtn,
-  NavBtnLink,
 } from "./NavbarElements.js";
 import { observer } from "mobx-react-lite";
 import { NavLink as Link } from "react-router-dom";
@@ -19,102 +16,90 @@ import {
   CONTACT_ROUTE,
   SIGNIN_ROUTE,
   SIGNUP_ROUTE,
+  CATALOG_CONSTRUCTOR,
+  CATALOG_LIKES,
+  CATALOG_HISTORY,
 } from "../../utils/consts.js";
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
-  return (
-    <>
-      <Nav>
-        <NavLink to="/">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1786/1786578.png"
-            //src="https://www.freepnglogos.com/uploads/circle-png/up-arrow-circle-logo-png-transparent-33.png"
-            // src={require('../../images/hardware.svg')}
-            width="40"
-            alt="img"
-          />
-          <h1 classNameName="nav-name">Salty Salty app</h1>
-        </NavLink>
-        <Bars />
+  const isAuth = user.isAuth;
+  const isAdmin = isAuth
+    ? jwt_decode(localStorage.getItem("token")).role === "ADMIN"
+    : false;
 
-        {user.isAuth ? (
-          jwt_decode(localStorage.getItem("token")).role === "ADMIN" ? (
-            <NavMenu>
-              <NavLink to={ADMIN_ROUTE}>Admin</NavLink>
-              <NavLink to={ABOUT_ROUTE}>About</NavLink>
-              <NavLink to={CATALOG_ROUTE}>Catalog</NavLink>
-              <NavLink to={CONTACT_ROUTE}>Contact us</NavLink>
-              <NavLink
-                to="/"
-                onClick={() => {
-                  user.setIsAuth(false);
-                  localStorage.setItem("token", "");
-                }}
-              >
-                Log Out
-              </NavLink>
-            </NavMenu>
-          ) : (
-            <NavMenu>
-              <NavLink to={ABOUT_ROUTE}>About</NavLink>
-              <NavLink to={CATALOG_ROUTE}>Catalog</NavLink>
-              <NavLink to={CONTACT_ROUTE}>Contact us</NavLink>
-              <NavLink
-                to="/"
-                onClick={() => {
-                  user.setIsAuth(false);
-                  localStorage.setItem("token", "");
-                }}
-              >
-                Log Out
-              </NavLink>
-            </NavMenu>
-          )
-        ) : (
-          <div className="cons">
-            <ul className="top_nav top_navbar-nav">
+  return (
+    <Nav>
+      <NavLink to="/">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1786/1786578.png"
+          width="40"
+          alt="img"
+        />
+        <h1 classNameName="nav-name">Salty Salty app</h1>
+      </NavLink>
+      <Bars />
+
+      <div className="cons">
+        <ul className="top_nav top_navbar-nav">
+          <li>
+            <a href="#!">Services</a>
+            <ul className="innernav">
               <li>
-                <a href="#!">Services</a>
-                <ul className="innernav">
-                  <li>
-                    <Link to={CONTACT_ROUTE}>Contact us</Link>
-                  </li>
-                  <li>
-                    <a href="#!">Test Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Test Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Test Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Test Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Test Link 1</a>
-                  </li>
-                </ul>
+                <Link to={CATALOG_ROUTE}>Catalog</Link>
               </li>
               <li>
-                <a href="#!">Services</a>
+                <Link to={CATALOG_CONSTRUCTOR}>Constructor</Link>
               </li>
               <li>
-                <a href="#!">Blog</a>
+                <Link to={CATALOG_LIKES}>Favorite</Link>
               </li>
               <li>
-                <a href="#!">Contact us</a>
+                <Link to={CATALOG_HISTORY}>History</Link>
               </li>
             </ul>
+          </li>
+          {isAdmin ? (
+            <li>
+              <Link to={ADMIN_ROUTE}>Admin</Link>
+            </li>
+          ) : null}
+          <li>
+            <Link to={ABOUT_ROUTE}>About</Link>
+          </li>
+          <li>
+            <Link to={CONTACT_ROUTE}>Contact us</Link>
+          </li>
+          <div className="auth_btns">
+            {isAuth ? (
+              <Link
+                to="/"
+                onClick={() => {
+                  user.setIsAuth(false);
+                  localStorage.setItem("token", "");
+                }}
+              >
+                Log Out
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to={SIGNIN_ROUTE}
+                  onClick={() => {
+                    // user.setIsAuth(true);
+                  }}
+                >
+                  Log in
+                </Link>
+                <Link to={SIGNUP_ROUTE} activeStyle>
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
-        )}
-
-        {/* <NavBtn>
-          
-        </NavBtn> */}
-      </Nav>
-    </>
+        </ul>
+      </div>
+    </Nav>
   );
 });
 
