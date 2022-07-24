@@ -7,4 +7,9 @@
 @import "./pages/about/about";
 @import "./pages/admin/admin";
 @import "./pages/auth/auth";
-@import "./components/navbar/navigationBar"
+@import "./components/navbar/navigationBar";
+@import "./pages/catalog/styles/catalog";
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+}

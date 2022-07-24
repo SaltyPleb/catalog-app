@@ -36,7 +36,7 @@ const Navbar = observer(() => {
           width="40"
           alt="img"
         />
-        <h1 classNameName="nav-name">Salty Salty app</h1>
+        <h1 className="nav-name">Salty Salty app</h1>
       </NavLink>
       <Bars />
 

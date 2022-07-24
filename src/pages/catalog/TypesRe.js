@@ -47,105 +47,121 @@ const TypesRe = observer(() => {
   const viewAll = () => {
     setBrandsChecked("");
     setTypesChecked("");
-    fetchDevices().then(data => device.setDeviceCardsView(data.rows));
+    fetchDevices().then((data) => device.setDeviceCardsView(data.rows));
   };
 
   const isTypeChecked = (item) => {
     return TypesChecked.includes(item);
   };
 
-  const isBrandChecked = (item) =>{
-    return BrandsChecked.includes(item) 
-  }
-    // ? "checked-item" : "not-checked-item";
+  const isBrandChecked = (item) => {
+    return BrandsChecked.includes(item);
+  };
+  // ? "checked-item" : "not-checked-item";
 
   const imgRotation = (item) => TypesChecked.includes(item) && "rotate";
 
   return (
-    // <div className="items">
-    //   <div className="view-all" onClick={viewAll}>
-    //     View all
-    //   </div>
+    <div className="items">
+      <div className="view-all" onClick={viewAll}>
+        View all
+      </div>
 
+      {device.types.map(({ id, name }, index) => (
+        <div className="items__type" key={index}>
+          <div className="type-item" onClick={() =>typeCheck(name, id)}>
+            <label>
+              <input
+                type="checkbox"
+                className="default__check"
+                value={name}
+                // onChange={typeCheck}
+                checked={isTypeChecked(name)}
+                disabled
+              />
+              <span className="custom__check"></span>
+            </label>
+
+            <div>{name}</div>
+            <img className={imgRotation(name)} src={arrow} alt="" />
+          </div>
+          {TypesChecked.includes(name) ? (
+            <div className="items__type__brands">
+              {device.brands.map(({ idI, name, dep }, index) =>
+                id == dep ? (
+                  <div className="brand">
+                    {idI}
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="default__check"
+                        value={name}
+                        onClick={brandCheck}
+                        checked={isBrandChecked(name)}
+                      />
+                      <span className="custom__check"></span>
+                    </label>
+                    <div className="brand__name">{name}</div>
+                  </div>
+                ) : null
+              )}
+            </div>
+          ) : null}
+        </div>
+      ))}
+
+    {/* // <div className="menu">
     //   {device.types.map(({ id, name }, index) => (
-    //     <div className="items__type" key={index}>
-    //       <div className="type-item" onClick={() =>typeCheck(name, id)}>
-    //         <label>
-    //           <input
-    //             type="checkbox"
-    //             className="default__check"
-    //             value={name}
-    //             // onChange={typeCheck}
-    //             checked={isTypeChecked(name)}
-    //             disabled
-    //           />
-    //           <span className="custom__check"></span>
-    //         </label>
-
-    //         <div>{name}</div>
-    //         <img className={imgRotation(name)} src={arrow} alt="" />
+    //     <li className="item" id={`mn${id}`}>
+    //       <a href={`#mn${id}`} className="menu_btn">
+    //         {name}
+    //       </a>
+    //       <div className="submenu">
+    //         <div href="#">Intel</div>
+    //         <div href="#">AMD</div>
     //       </div>
-    //       {TypesChecked.includes(name) ? (
-    //         <div className="items__type__brands">
-    //           {device.brands.map(({ idI, name, dep }, index) =>
-    //             id == dep ? (
-    //               <div className="brand">
-    //                 {idI}
-    //                 <label>
-    //                   <input
-    //                     type="checkbox"
-    //                     className="default__check"
-    //                     value={name}
-    //                     onClick={brandCheck}
-    //                     checked={isBrandChecked(name)}
-    //                   />
-    //                   <span className="custom__check"></span>
-    //                 </label>
-    //                 <div className="brand__name">{name}</div>
-    //               </div>
-    //             ) : null
-    //           )}
-    //         </div>
-    //       ) : null}
-    //     </div>
+    //     </li>
     //   ))}
-    <div className="menu">
-      <li className="item" id="mn1">
-        <a href="#mn1" className="menu_btn">CPU</a>
-          <div className="submenu">
-            <div href="#">Intel</div>
-            <div href="#">AMD</div>
-          </div>
-      </li>
-      <li className="item" id="mn2">
-        <a href="#mn2" className="menu_btn">GPU</a>
-          <div className="submenu">
-            <div href="#">Nvidia</div>
-            <div href="#">AMD</div>
-            <div href="#">Palit</div>
-            <div href="#">Some</div>
-          </div>
-      </li>
-      <li className="item" id="mn3">
-        <a href="#mn3" className="menu_btn">GPU</a>
-          <div className="submenu">
-            <div href="#">Nvidia</div>
-            <div href="#">AMD</div>
-            <div href="#">Palit</div>
-            <div href="#">Some</div>
-          </div>
-      </li>
-      <li className="item" id="mn4">
-        <a href="#mn4" className="menu_btn">GPU</a>
-          <div className="submenu">
-            <div href="#">Nvidia</div>
-            <div href="#">AMD</div>
-            <div href="#">Palit</div>
-            <div href="#">Some</div>
-          </div>
-      </li>
-    </div>
     // </div>
+
+    // <div className="menu">
+    //   <li className="item" id="mn1">
+    //     <a href="#mn1" className="menu_btn">CPU</a>
+    //       <div className="submenu">
+    //         <div href="#">Intel</div>
+    //         <div href="#">AMD</div>
+    //       </div>
+    //   </li>
+    //   <li className="item" id="mn2">
+    //     <a href="#mn2" className="menu_btn">GPU</a>
+    //       <div className="submenu">
+    //         <div href="#">Nvidia</div>
+    //         <div href="#">AMD</div>
+    //         <div href="#">Palit</div>
+    //         <div href="#">Some</div>
+    //       </div>
+    //   </li>
+    //   <li className="item" id="mn3">
+    //     <a href="#mn3" className="menu_btn">GPU</a>
+    //       <div className="submenu">
+    //         <div href="#">Nvidia</div>
+    //         <div href="#">AMD</div>
+    //         <div href="#">Palit</div>
+    //         <div href="#">Some</div>
+    //       </div>
+    //   </li>
+    //   <li className="item" id="mn4">
+    //     <a href="#mn4" className="menu_btn">GPU</a>
+    //       <div className="submenu">
+    //         <div href="#">Nvidia</div>
+    //         <div href="#">AMD</div>
+    //         <div href="#">Palit</div>
+    //         <div href="#">Some</div>
+    //       </div>
+    //   </li>
+    // </div> */}
+
+    </div>
   );
 });
 

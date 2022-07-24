@@ -29,8 +29,10 @@ const Auth = observer(() => {
       user.setUser(user);
       user.setIsAuth(true);
       user.setUserInfo(data);
-      history.push(CATALOG_ROUTE)
-    } catch (e) {alert(e.response.data.message)}
+      history.push(CATALOG_ROUTE);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
   };
 
   const signUpClick = async () => {
@@ -39,8 +41,10 @@ const Auth = observer(() => {
       data = await registration(email, password);
       user.setUser(user);
       user.setIsAuth(true);
-      history.push(CATALOG_ROUTE)
-    } catch (e) {alert(e.response.data.message)}
+      history.push(CATALOG_ROUTE);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
   };
 
   return (

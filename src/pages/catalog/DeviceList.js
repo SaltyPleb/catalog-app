@@ -10,11 +10,11 @@ const DeviceList = observer(({}) => {
   const { device } = useContext(Context);
   const history = useHistory();
   return (
-    <>
+    <div className="grid">
       {device.deviceCardsView.map((device) =>
         <DeviceItem key={device.id} device={device}/>
         )}
-    </>
+    </div>
   );
 });
 

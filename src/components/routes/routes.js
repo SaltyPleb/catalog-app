@@ -1,5 +1,5 @@
 import About from "../../pages/about/about";
-import Catalog from "../../pages/catalog/cat";
+import Catalog from "../../pages/catalog/";
 import Contact from "../../pages/contact/contact-me";
 import Auth from "../../pages/auth/auth";
 import Main from "../../pages/";

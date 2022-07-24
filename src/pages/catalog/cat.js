@@ -22,7 +22,7 @@ const cat = observer(() => {
 
   return (
     <div>
-      <RightNav />
+      {/* <RightNav /> */}
       <div className="main_grid">
         <div className="search__grid">
           <div className="search__bar">
@@ -52,14 +52,12 @@ const cat = observer(() => {
             </div>
           </div>
           <div className="right_grid">
-            <div className="grid">
               {/* {this.state.data.map(() => ( */}
 
                 <DeviceList/>
 
               {/* <Card /> */}
               {/* ))} */}
-            </div>
           </div>
         </div>
       </div>

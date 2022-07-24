@@ -4,7 +4,7 @@ import Icon from "../../utils/Icon";
 
 const HistoryItem = (item) => {   
   return (
-    <div className="item">
+    <div className="item" key={item.date}>
       <input type="checkbox" />
       <div className="item__top">
         <div className="date">{item.date}</div>
@@ -15,7 +15,7 @@ const HistoryItem = (item) => {
       <div className="item__gap" />
       <div className={`item__rows length-${item.values.length}`}>
         {item.values.map(({ id, link, device, favorite, updatedAt }) => (
-          <div className="row">
+          <div className="row" key={id}>
             <div className="row__time">
               {updatedAt
                 .split("T")[1]
