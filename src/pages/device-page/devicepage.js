@@ -14,15 +14,15 @@ const DevicePage = () => {
   useEffect(() => {
     fetchOneDevices(id).then((data) => setDevice(data));
   }, []);
-  
+
   const addToFav = () => {
-    const formData = new FormData()
-    formData.append('device_name', device.name)
-    formData.append('device_link', device.id)
-    formData.append('userId', user.userInfo.id)
-    formData.append('deviceId', device.id)
-    insertFavorite(formData).then(data => console.log(data));
-  }
+    const formData = new FormData();
+    formData.append("device_name", device.name);
+    formData.append("device_link", device.id);
+    formData.append("userId", user.userInfo.id);
+    formData.append("deviceId", device.id);
+    insertFavorite(formData).then((data) => console.log(data));
+  };
 
   return (
     <div className="device_main">
@@ -36,24 +36,22 @@ const DevicePage = () => {
 
             <div className="product-main">
               <div className="focus">
-                <span style={{cursor: 'pointer'}}>Description</span>
-                <span style={{cursor: 'pointer'}}>Links</span>
+                <span style={{ cursor: "pointer" }}>Description</span>
+                <span style={{ cursor: "pointer" }}>Links</span>
               </div>
-              {/* <p> */}
               <div className="description_list">
                 {device.info.map((info, index) => (
-                    <div
-                      key={info.id}
-                      style={{
-                        background: index % 2 === 0 ? "gray" : "transparent",
-                        padding: 10,
-                      }}
-                    >
-                      {info.title}: {info.description}
-                    </div>
+                  <div
+                    key={info.id}
+                    style={{
+                      background: index % 2 === 0 ? "gray" : "transparent",
+                      padding: 10,
+                    }}
+                  >
+                    {info.title}: {info.description}
+                  </div>
                 ))}
-                </div>
-              {/* </p> */}
+              </div>
             </div>
 
             <div className="product-details">
@@ -69,7 +67,11 @@ const DevicePage = () => {
             </div>
           </div>
           <div className="product-right">
-            <img className="device-image" src={process.env.REACT_APP_API_VERSION_URL + device.img} alt="" />
+            <img
+              className="device-image"
+              src={process.env.REACT_APP_API_VERSION_URL + device.img}
+              alt=""
+            />
           </div>
         </div>
       </div>

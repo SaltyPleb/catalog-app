@@ -50,10 +50,16 @@ const Filter = observer(() => {
     return TypesChecked.includes(item);
   };
 
-  const imgRotation = (item) => TypesChecked.includes(item) ? null : "rotate";
+  const imgRotation = (item) => (TypesChecked.includes(item) ? null : "rotate");
 
   const getTypesCount = (id) =>
     device.brands.filter((brand) => brand.dep == id).length;
+
+  const viewAll = () => {
+    setBrandsChecked("");
+    setTypesChecked("");
+    fetchDevices().then((data) => device.setDeviceCardsView(data.rows));
+  };
 
   return (
     <>
@@ -62,9 +68,16 @@ const Filter = observer(() => {
         {device.types.map(({ id, name }) => (
           <div className="items__type" key={id}>
             <div className="type-item">
-              <div className="item-header" onClick={() => typeCheck(name, id)}>
-                <img className={imgRotation(name)} src={arrow} alt="" />
-                <div className={`type-name ${isTypeChecked(name) ? "selected" : "disabled"}`}>
+              <div
+                className="item-header c-btn"
+                onClick={() => typeCheck(name, id)}
+              >
+                <img className={imgRotation(name)} src={arrow} alt="None" />
+                <div
+                  className={`type-name ${
+                    isTypeChecked(name) ? "selected" : "disabled"
+                  }`}
+                >
                   {name} ({getTypesCount(id)})
                 </div>
               </div>
@@ -72,7 +85,7 @@ const Filter = observer(() => {
                 <div className="brands">
                   {device.brands.map(({ idI, name, dep }) =>
                     id == dep ? (
-                      <div className="brand" key={name}>
+                      <div className="brand c-btn" key={name}>
                         {idI}
                         <label>
                           <input
@@ -95,7 +108,9 @@ const Filter = observer(() => {
           </div>
         ))}
       </div>
-      <div className="filter-view">View all components</div>
+      <div className="filter-view" onClick={() => viewAll()}>
+        <div className="c-btn">View all components</div>
+      </div>
     </>
   );
 });

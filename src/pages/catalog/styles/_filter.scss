@@ -12,71 +12,112 @@
         padding: 1.5rem 1.5rem 1rem 1.5rem;
     }
 
+    .filter-view {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
 
-    .items {
-        .view-all {
-            padding: 4px;
-            cursor: pointer;
-        }
-
-        &__type {
-            z-index: 3;
-
-            .type-item {
+    .filter-category {
+        position: relative;
+        width: 100%;
+        
+        .items {
+            .view-all {
+                padding: 4px;
                 cursor: pointer;
-                // width: clamp(100px, 50%, 250px);
-
-                .item-header {
-                    padding: .6rem 2rem;
-                    gap: 1rem;
-                    align-items: center;
-                    display: flex;
-                    flex-direction: row;
-
-                    &>img {
-                        // left: -20px;
-                        display: relative;
-                        position: relative;
-                        cursor: pointer;
-                        width: 10px;
-                        height: 10px;
-                        top: -2px;
-                        // margin-left: 10rem;
-                        transition: 0.5s;
-                        -webkit-transform: rotate(270deg);
-                        transform: rotate(270deg);
-
-                        &.rotate {
-                            -webkit-transform: rotate(90deg) !important;
-                            transform: rotate(90deg) !important;
-                            top: 2px;
-                        }
-                    }
-
-                    .type-name {
-                        font-size: 13pt;
-
-                        &.selected {
-                            color: $red-color;
-                            ;
-                        }
-                    }
-                }
-
-                .brands {
-                    display: flex;
-                    position: relative;
-                    margin-left: 5rem;
-                    gap: .5rem;
-                    flex-direction: column;
-
-                    .brand {
+            }
+    
+            &__type {
+                z-index: 3;
+    
+                .type-item {
+                    cursor: pointer;
+                    
+                    .item-header {
+                        padding: .6rem 0 .3rem 2rem;
+                        gap: 1rem;
+                        align-items: center;
                         display: flex;
-                        gap: .7rem;
+                        flex-direction: row;
+    
+                        &>img {
+                            display: relative;
+                            position: relative;
+                            cursor: pointer;
+                            width: 10px;
+                            height: 10px;
+                            top: 2px;
+                            transition: 0.5s;
+                            -webkit-transform: rotate(90deg);
+                            transform: rotate(90deg);
+    
+                            &.rotate {
+                                -webkit-transform: rotate(270deg) !important;
+                                transform: rotate(270deg) !important;
+                                top: -2px;
+                            }
+                        }
+    
+                        .type-name {
+                            font-size: 13pt;
+                            position: relative;
+                            width: 100%;
+    
+                            &.selected {
+                                color: $red-color;
+                                ;
+                            }
+                        }
+                    }
+    
+                    .brands {
+                        margin-top: .6rem;
+                        display: flex;
+                        position: relative;
+                        margin-left: 5rem;
+                        gap: .5rem;
+                        flex-direction: column;
+    
+                        .brand {
+                            display: flex;
+                            gap: .7rem;
+                        }
                     }
                 }
             }
         }
+    }
+
+    .c-btn {
+        position: relative;
+        cursor: pointer;
+        gap: .7rem;
+        display: flex;
+        color: $cool-gray-color;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, $red-color, $red-color);
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        &:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        &:hover {
+            color: $red-color !important;
+        }
+
     }
 }
 

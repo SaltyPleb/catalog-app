@@ -1,5 +1,4 @@
 import React from "react";
-import Rightnav from "../catalog/rightnav";
 import ClientSystem from "./ClientSystem";
 import LeftNav from "./LeftNav";
 

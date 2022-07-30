@@ -148,13 +148,13 @@ hr {
 
 
 .wrapper {
-  height: 93vh;
+  height: calc(100vh - 60px);
   position: relative;
-  background-color: #ffffff;
   /* background-color: #ccc5b9; */
 }
 
 .dev_card {
+  z-index: 11;
   max-width: 95rem;
   max-height: 55rem;
   position: relative;
@@ -192,7 +192,7 @@ hr {
 .product-right img {
   max-width: 480px;
   max-height: 480px;
-  height: 30rem;
+  // height: 30rem;
 }
 
 .dev_header h1 {

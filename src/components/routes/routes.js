@@ -1,6 +1,6 @@
 import About from "../../pages/about/about";
 import Catalog from "../../pages/catalog/";
-import Contact from "../../pages/contact/contact-me";
+import Contact from "../../pages/contact/Contact";
 import Auth from "../../pages/auth/auth";
 import Main from "../../pages/";
 import {
@@ -17,8 +17,7 @@ import {
   SIGNUP_ROUTE,
 } from "../../utils/consts";
 import Constructor from "../../pages/constructor/";
-import DevicePage from "../../pages/device-page/devicepage";
-// import likes from "../../pages/likes/Likes";
+import DevicePage from "../../pages/device-page/DevicePage";
 import Admin from "../../pages/admin/Admin";
 import Favorite from "../../pages/favorite/Favorite";
 import History from "../../pages/history/History";

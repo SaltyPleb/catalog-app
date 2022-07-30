@@ -9,7 +9,7 @@ const HistoryItem = (item) => {
       <div className="item__top">
         <div className="date">{item.date}</div>
         <div className="i-box">
-          <img className="icon " src={arrow} />
+          <img className="icon " src={arrow} alt="None"/>
         </div>
       </div>
       <div className="item__gap" />
