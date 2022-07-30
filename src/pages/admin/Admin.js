@@ -4,7 +4,6 @@ import ChangeRole from "../../components/modals/ChangeRole.js";
 import CreateBrand from "../../components/modals/CreateBrand.js";
 import CreateDevice from "../../components/modals/CreateDevice.js";
 import CreateType from "../../components/modals/CreateType.js";
-import "../admin/admin.css";
 
 const Admin = () => {
   const [brandVisibility, setBrandVisibility] = useState(false);

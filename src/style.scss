@@ -1,0 +1,17 @@
+@import "./vars";
+@import "./pages/favorite/favorite";
+@import "./pages/history/history";
+@import "./pages/device-page/devicePage";
+@import "./pages/403/unauthorized";
+@import "./pages/constructor/constructor";
+@import "./pages/about/about";
+@import "./pages/admin/admin";
+@import "./pages/auth/auth";
+@import "./components/navbar/navigationBar";
+@import "./pages/catalog/styles/catalog";
+@import "./pages/contact/contact";
+@import "./components/loader/loader";
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+}

@@ -1,0 +1,163 @@
+.favorite {
+    position: absolute;
+    background: #F8F9FA;
+    height: calc(100% - 60px);
+    width: 100%;
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 28vw;
+
+    &__top {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .h-name {
+            color: #3C7CEA;
+            font-size: larger;
+        }
+
+        .h-info {
+            color: #919191;
+            font-size: smaller;
+        }
+    }
+
+    &__main {
+        position: relative;
+        padding: 1.5rem 1rem 0 1rem;
+        background-color: white;
+        border-radius: 10px;
+        width: 100%;
+
+        &__header {
+            .head {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .header__info {
+                    display: flex;
+                    flex-direction: row;
+                    font-weight: bold;
+                    gap: 0.3rem;
+                }
+
+                .btns {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.5rem;
+
+                    .sort-btn {
+                        cursor: pointer;
+                        height: 30px !important;
+                        width: 30px !important;
+                        background-color: #EBEDEF;
+                        border-radius: 5px;
+
+                        &.active {
+                            background: #689DEF;
+                        }
+                    }
+                }
+            }
+
+            .status {
+                display: flex;
+                flex-direction: row;
+                gap: 0.6rem;
+
+                .btn-status {
+                    padding: 0.5rem 0.8rem;
+                    background-color: #EBEDEF;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: #689DEF;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            margin-top: 1.5rem;
+
+            .item-container {
+                margin-bottom: 1rem;
+                border: 1.5px solid #cbcbcb;
+                border-radius: 5px;
+
+                .item {
+                    padding: 1rem;
+                    flex-direction: row;
+                    display: flex;
+
+                    &>div {
+                        flex-direction: column;
+                        display: flex;
+                        margin-right: 3rem;
+
+                    }
+
+                    &__name {
+                        min-width: 20%;
+                        max-width: 20%;
+                    }
+
+                    &__price {
+                        min-width: 5%;
+                        max-width: 5%;
+                    }
+
+                    &__release {
+                        min-width: 15%;
+                        max-width: 15%;
+                    }
+
+                    .name {
+                        font-weight: bold;
+                        font-size: 90%;
+                    }
+
+                    .label {
+                        color: #919191;
+                    }
+                }
+
+                .item_btns{
+                    position: relative;
+                    padding: 1rem;
+                    .item-btn{
+                        text-decoration: none;
+                        color: black;
+                        cursor: pointer;
+                        gap: 1rem;
+                        display: inline-block;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1rem 2rem;
+                        background-color: #EBEDEF;
+                        border-radius: .5rem;
+                        margin-right: 1.6rem;
+
+                        &.green {
+                            background-color: #A4F4CB;
+                        }
+
+                        &.red {
+                            background-color: #f4aba4;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import DeviceStore from "./store/DiviceStore";
 import UserStore from "./store/UserStore.js";
+import "./style.scss"
 
 export const Context = createContext(null);
 ReactDOM.render(

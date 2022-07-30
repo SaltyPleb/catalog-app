@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./styles/devicepage.css";
 import { useParams } from "react-router-dom";
 import { fetchOneDevices } from "../../http/deviceAPI";
 import { insertFavorite } from "../../http/favoriteAPI";
@@ -17,12 +16,13 @@ const DevicePage = () => {
   }, []);
 
   const addToFav = () => {
-    const formData = new FormData()
-    formData.append('device_name', device.name)
-    formData.append('device_link', "link")
-    formData.append('userId', user.userInfo.id)
-    insertFavorite(formData).then(data => console.log(data));
-  }
+    const formData = new FormData();
+    formData.append("device_name", device.name);
+    formData.append("device_link", device.id);
+    formData.append("userId", user.userInfo.id);
+    formData.append("deviceId", device.id);
+    insertFavorite(formData).then((data) => console.log(data));
+  };
 
   return (
     <div className="device_main">
@@ -36,10 +36,10 @@ const DevicePage = () => {
 
             <div className="product-main">
               <div className="focus">
-                <span style={{cursor: 'pointer'}}>Description</span>
-                <span style={{cursor: 'pointer'}}>Links</span>
+                <span style={{ cursor: "pointer" }}>Description</span>
+                <span style={{ cursor: "pointer" }}>Links</span>
               </div>
-              {/* <p> */}
+              <div className="description_list">
                 {device.info.map((info, index) => (
                   <div
                     key={info.id}
@@ -51,7 +51,7 @@ const DevicePage = () => {
                     {info.title}: {info.description}
                   </div>
                 ))}
-              {/* </p> */}
+              </div>
             </div>
 
             <div className="product-details">
@@ -67,7 +67,11 @@ const DevicePage = () => {
             </div>
           </div>
           <div className="product-right">
-            <img src={"http://localhost:5000/" + device.img} alt="" />
+            <img
+              className="device-image"
+              src={process.env.REACT_APP_API_VERSION_URL + device.img}
+              alt=""
+            />
           </div>
         </div>
       </div>

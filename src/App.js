@@ -8,8 +8,8 @@ import { observer } from "mobx-react-lite";
 import { Context } from ".";
 import { check } from "./http/userAPI";
 import Loader from "./components/loader/loader";
-import "../src/components/loader/loader.css"
 import { fetchDevices } from "./http/deviceAPI";
+import NotificationBar from "./pages/403/NotificationBar";
 
 const App = observer(() => {
   const { user } = useContext(Context);
@@ -35,7 +35,9 @@ const App = observer(() => {
 
   return (
     <Router>
+      {/* TODO: Make something with app height */}
       <Navbar />
+      {user.isAuth ? null : <NotificationBar />}
       <AppRouter />
 
       {/* <Switch>

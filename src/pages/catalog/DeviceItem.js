@@ -11,11 +11,16 @@ const DeviceItem = ({ device }) => {
       onClick={() => history.push(DEVICE_ROUTE + "/" + device.id)}
     >
       <div className="header">
-        <img
-          className="header-img skeleton"
-          src={"http://localhost:5000/" + device.img}
-          alt=""
-        />
+        {!process.env.REACT_APP_API_VERSION_URL + device.img ? (
+          <img
+            className="header-img"
+            src={process.env.REACT_APP_API_VERSION_URL + device.img}
+            alt="none"
+          />
+        ) : (
+          <div className="header-img skeleton" />
+        )}
+
         <div className="title" data-title>
           {device.name ? (
             device.name
@@ -28,7 +33,9 @@ const DeviceItem = ({ device }) => {
         </div>
       </div>
       {device.desc ? (
-        <div className="description" data-body>{device.desc}</div>
+        <div className="description" data-body>
+          {device.desc}
+        </div>
       ) : (
         <div data-body>
           <div className="skeleton skeleton-text"></div>
