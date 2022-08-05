@@ -10,14 +10,15 @@ import { check } from "./http/userAPI";
 import Loader from "./components/loader/loader";
 import { fetchDevices } from "./http/deviceAPI";
 import NotificationBar from "./pages/403/NotificationBar";
+import { publicRoutes } from "./components/routes/routes";
 
 const App = observer(() => {
   const { user } = useContext(Context);
-  const {device} = useContext(Context);
+  const { device } = useContext(Context);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchDevices().then(data => device.setDeviceCardsView(data.rows));
+    fetchDevices().then((data) => device.setDeviceCardsView(data.rows));
     setTimeout(() => {
       check()
         .then((data) => {
@@ -38,7 +39,7 @@ const App = observer(() => {
       {/* TODO: Make something with app height */}
       <Navbar />
       {user.isAuth ? null : <NotificationBar />}
-      <AppRouter />
+      <AppRouter routes={publicRoutes} />
 
       {/* <Switch>
         <Route path='/' exact component={Home}/>

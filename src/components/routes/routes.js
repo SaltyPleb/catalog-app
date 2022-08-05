@@ -10,6 +10,10 @@ import {
   CATALOG_HISTORY,
   CATALOG_LIKES,
   CATALOG_ROUTE,
+  CONSTRUCTOR_DASHBOARD_ROUTE,
+  CONSTRUCTOR_LIBRARY_ROUTE,
+  CONSTRUCTOR_SETTINGS_ROUTE,
+  CONSTRUCTOR_SYSTEMS_ROUTE,
   CONTACT_ROUTE,
   DEVICE_ROUTE,
   MAIN_ROUTE,
@@ -21,6 +25,10 @@ import DevicePage from "../../pages/device-page/DevicePage";
 import Admin from "../../pages/admin/Admin";
 import Favorite from "../../pages/favorite/Favorite";
 import History from "../../pages/history/History";
+import ClientSystem from "../../pages/constructor/ClientSystem";
+import Library from "../../pages/constructor/Library";
+import Settings from "../../pages/constructor/Settings";
+import Dashboard from "../../pages/constructor/Dashboard";
 
 export const authRoutes = [
   {
@@ -115,3 +123,22 @@ export const publicRoutes = [
     Component: Admin,
   },
 ];
+
+export const constructorRoutes = [
+  {
+    path: CONSTRUCTOR_DASHBOARD_ROUTE,
+    Component: Dashboard,
+  },
+  {
+    path: CONSTRUCTOR_SYSTEMS_ROUTE,
+    Component: ClientSystem,
+  },
+  {
+    path: CONSTRUCTOR_LIBRARY_ROUTE,
+    Component: Library,
+  },
+  {
+    path: CONSTRUCTOR_SETTINGS_ROUTE,
+    Component: Settings,
+  },
+]
