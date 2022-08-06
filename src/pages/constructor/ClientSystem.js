@@ -47,7 +47,7 @@ const ClientSystem = observer(() => {
   };
 
   return (
-    <div className="client-system">
+    <>
       <div className="navigation">
         <div className="navigation__url">
           <h3>Client System /</h3>
@@ -105,7 +105,7 @@ const ClientSystem = observer(() => {
           <ComponentCards selectedType={selectedType} />
         </div>
       </div>
-    </div>
+    </>
   );
 });
 

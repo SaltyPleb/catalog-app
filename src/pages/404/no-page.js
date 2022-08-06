@@ -43,7 +43,7 @@ class nopage extends Component {
         style={{
           position: "relative",
           /* display: flex; */
-          width: "100vw",
+          width: "100%",
           /* justify-content: space-around; */
           /* align-items: flex-start; */
           /* flex-wrap: nowrap; */

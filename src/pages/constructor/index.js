@@ -10,7 +10,9 @@ const index = observer(() => {
     <div className="system-container">
       <Router>
         <LeftNav />
-        <AppRouter routes={constructorRoutes} />
+        <div className="constructor_wrapper">
+          <AppRouter routes={constructorRoutes} />
+        </div>
       </Router>
     </div>
   );
