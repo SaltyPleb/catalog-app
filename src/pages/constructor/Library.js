@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Icon from "../../utils/Icon";
+import CheckBox from "../../utils/CheckBox";
+import arrow from "../../images/static/arrow.png";
 
 const Library = () => {
   const [showFilter, setShowFilter] = useState(true);
@@ -78,6 +80,9 @@ const Library = () => {
               <div className="table">
                 <div className="table-header">
                   <div className="header__item center">
+                    <CheckBox />
+                  </div>
+                  <div className="header__item center">
                     <a id="name" className="filter__link" href="#">
                       ID
                     </a>
@@ -121,7 +126,10 @@ const Library = () => {
                 </div>
                 <div className="table-content">
                   <div className="table-row">
-                    <div className="table-data center">001</div>
+                    <div className="table-data center">
+                      <CheckBox />
+                    </div>
+                    <div className="table-data center">312312</div>
                     <div className="table-data">
                       <div className="creator">
                         <div className="creator__img">YB</div>
@@ -135,11 +143,14 @@ const Library = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="table-data">0</div>
-                    <div className="table-data">1</div>
+                    <div className="table-data">Pro PC build I7-9700</div>
+                    <div className="table-data">2022-07-22</div>
                     <div className="table-data">5</div>
                   </div>
                   <div className="table-row">
+                    <div className="table-data center">
+                      <CheckBox />
+                    </div>
                     <div className="table-data center">002</div>
                     <div className="table-data">
                       <div className="creator">
@@ -154,11 +165,14 @@ const Library = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="table-data">1</div>
-                    <div className="table-data">2</div>
+                    <div className="table-data">Pro PC build I7-9700</div>
+                    <div className="table-data">2022-07-22</div>
                     <div className="table-data">3</div>
                   </div>
                   <div className="table-row">
+                    <div className="table-data center">
+                      <CheckBox />
+                    </div>
                     <div className="table-data center">003</div>
                     <div className="table-data">
                       <div className="creator">
@@ -173,17 +187,30 @@ const Library = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="table-data">2</div>
-                    <div className="table-data">2</div>
+                    <div className="table-data">Pro PC build I7-9700</div>
+                    <div className="table-data">2022-07-22</div>
                     <div className="table-data">2</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="systems_wrapper__pagination">
-              <div className="page">1</div>
-              <div className="page">2</div>
-              <div className="page">3</div>
+            <div className="systems_wrapper__navigation">
+              <div className="page_limit">
+                Show 5 more on page
+                <img className="left" src={arrow} alt="None" />
+              </div>
+
+              <div className="pagination">
+                <div className="control">
+                  <img className="left" src={arrow} alt="None" />
+                </div>
+                <div className="page">1</div>
+                <div className="page current">2</div>
+                <div className="page">3</div>
+                <div className="control">
+                  <img className="right" src={arrow} alt="None" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
