@@ -82,6 +82,7 @@
         font: inherit;
         background-color: transparent;
         outline: 2px solid $cool-blue-color;
+        z-index: 2;
     }
     
     .c-input-label {
@@ -92,6 +93,7 @@
         transform: translate(10px, 10px);
         transition: transform .25s;
         font-weight: bold;
+        z-index: 1;
     }
 
     .c-input:focus+.c-input-label,
