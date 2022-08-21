@@ -6,7 +6,7 @@ import Main from "../../pages/";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
-  CATALOG_CONSTRUCTOR,
+  MAIN_CONSTRUCTOR,
   CATALOG_HISTORY,
   CATALOG_LIKES,
   CATALOG_ROUTE,
@@ -64,7 +64,7 @@ export const authRoutes = [
     Component: History,
   },
   {
-    path: CATALOG_CONSTRUCTOR,
+    path: MAIN_CONSTRUCTOR,
     Component: Constructor,
   },
   {
@@ -111,7 +111,7 @@ export const publicRoutes = [
     Component: History,
   },
   {
-    path: CATALOG_CONSTRUCTOR,
+    path: MAIN_CONSTRUCTOR,
     Component: Constructor,
   },
   {

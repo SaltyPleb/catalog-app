@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import arrow from "../../images/static/arrow.png";
 import {
-  CATALOG_CONSTRUCTOR,
+  MAIN_CONSTRUCTOR,
   CONSTRUCTOR_DASHBOARD_ROUTE,
   CONSTRUCTOR_LIBRARY_ROUTE,
   CONSTRUCTOR_SETTINGS_ROUTE,
@@ -43,7 +43,7 @@ const LeftNav = observer(() => {
 
           <div className="bottom-wrap bottom">
             <div className="bottom__items">
-              <Link to={CATALOG_CONSTRUCTOR} className="item">
+              <Link to={MAIN_CONSTRUCTOR} className="item">
                 <Icon name="notification" color="#605593" size={20} />
                 <div className="item__name">Notifications</div>
               </Link>
