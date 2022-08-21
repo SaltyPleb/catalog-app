@@ -23,6 +23,7 @@ const App = observer(() => {
       check()
         .then((data) => {
           user.setUser(true);
+          user.setIsLoginNotification(false);
           user.setIsAuth(true);
           user.setUserInfo(data);
         })
@@ -38,7 +39,7 @@ const App = observer(() => {
     <Router>
       {/* TODO: Make something with app height */}
       <Navbar />
-      {user.isAuth ? null : <NotificationBar />}
+      {user.isLoginNotification ? <NotificationBar /> : null}
       <AppRouter routes={publicRoutes} />
 
       {/* <Switch>

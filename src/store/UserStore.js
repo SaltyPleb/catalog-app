@@ -6,7 +6,12 @@ export default class UserStore {
         this._user = {}
         this._userInfo = {}
         this._users = []
+        this._isLoginNotification = true
         makeAutoObservable(this)
+    }
+
+    setIsLoginNotification(param) {
+        this._isLoginNotification = param
     }
 
     setUserInfo(user) {
@@ -23,6 +28,10 @@ export default class UserStore {
 
     setUsers(users) {
         this._users = users
+    }
+
+    get isLoginNotification() {
+        return this._isLoginNotification
     }
 
     get userInfo() {
