@@ -29,6 +29,7 @@ import ClientSystem from "../../pages/constructor/ClientSystem";
 import Library from "../../pages/constructor/Library";
 import Settings from "../../pages/constructor/Settings";
 import Dashboard from "../../pages/constructor/Dashboard";
+import SystemsList from "../../pages/constructor/SystemsList";
 
 export const authRoutes = [
   {
@@ -131,6 +132,10 @@ export const constructorRoutes = [
   },
   {
     path: CONSTRUCTOR_SYSTEMS_ROUTE,
+    Component: SystemsList,
+  },
+  {
+    path: CONSTRUCTOR_SYSTEMS_ROUTE + "/:id",
     Component: ClientSystem,
   },
   {

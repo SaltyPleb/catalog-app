@@ -5,11 +5,43 @@ import { fetchBrands, fetchDevices, fetchTypes } from "../../http/deviceAPI";
 import Icon from "../../utils/Icon";
 import arrow from "../../images/static/arrow.png";
 import ComponentCards from "./ComponentCards";
+import { useLocation, useParams } from "react-router-dom";
 
 const ClientSystem = observer(() => {
-  const { device, user } = useContext(Context);
+  const [system, setSystem] = useState({
+    title: "New Test System 2",
+    components: {
+      GPU: "GPU",
+      CPU: "CPU",
+      PowerSupply: "PowerSupply",
+      MotherBoard: "MotherBoard",
+      Case: "Case",
+      HDD: "HDD",
+      SSD: "SSD",
+    },
+    init_params: {
+      mailHost: "mail1",
+      "config:installationAt": "Philadelphia, PA",
+      "config:adminEmail": "ksm@pobox.com",
+      "config:poweredBy": "Cofax",
+      "config:poweredByIcon": "/images/cofax.gif",
+      "config:staticPath": "/content/static",
+    },
+    system_params: {
+      creatorName: "Yauheni Bulyha",
+      creatorPrefix: "YB",
+      mailUser: "mail1",
+      systemName: "NewTestSystem",
+      creationDate: "2022-08-27",
+      systemStarts: "140",
+      id: "14",
+    },
+  });
+  const { id } = useParams();
+  const { device, constructor } = useContext(Context);
   const [checked, setChecked] = useState(false);
   const [selectedType, setSelectedType] = useState(1);
+  const location = useLocation();
 
   useEffect(() => {
     fetchTypes().then((data) => device.setTypes(data));
@@ -46,12 +78,17 @@ const ClientSystem = observer(() => {
     selectedType == id ? setSelectedType(id) : setSelectedType(id);
   };
 
+  const getLocation = () => {
+    const locationPath = location.pathname;
+    return <h3>{locationPath.split("/")[3]}</h3>;
+  };
+
   return (
     <>
       <div className="navigation">
         <div className="navigation__url">
           <h3>Client System /</h3>
-          <h3>My New System</h3>
+          {getLocation()}
         </div>
         <div className="navigation__btns">
           <div className="c-btn">

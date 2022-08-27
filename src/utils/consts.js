@@ -6,8 +6,8 @@ export const SIGNUP_ROUTE = '/sign-up'
 export const SIGNIN_ROUTE = '/sign-in'
 export const MAIN_ROUTE = '/'
 export const MAIN_CONSTRUCTOR = '/constructor'
-export const CATALOG_LIKES = CATALOG_ROUTE + '/likes'
-export const CATALOG_HISTORY = CATALOG_ROUTE + '/history'
+export const CATALOG_LIKES = '/likes'
+export const CATALOG_HISTORY = '/history'
 export const DEVICE_ROUTE = CATALOG_ROUTE + '/device'
 
 // Constructor routes
