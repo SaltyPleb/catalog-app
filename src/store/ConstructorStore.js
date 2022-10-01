@@ -2,6 +2,16 @@ import { makeAutoObservable } from "mobx";
 
 export default class DeviceStore {
   constructor() {
+    this._currentComponents = {
+      // GPU: "GPU c",
+      // CPU: "CPU c",
+      // PowerSupply: "PowerSupply c",
+      // MotherBoard: "MotherBoard c",
+      // Case: "Case c",
+      // HDD: "HDD c",
+      // SSD: "SSD c",
+    };
+
     this._systems = [
       {
         title: "NewTestSystem",
@@ -84,11 +94,22 @@ export default class DeviceStore {
     makeAutoObservable(this);
   }
 
+  setCurrentComponents(component, type) {
+    let currentComponents = this._currentComponents;
+    type == "clear" && (currentComponents = {})
+    currentComponents[type] = component.name;
+    this._currentComponents = currentComponents;
+  }
+
   setSystems(devices) {
     this._systems = devices;
   }
 
   get systems() {
     return this._systems;
+  }
+
+  get currentComponents() {
+    return this._currentComponents;
   }
 }

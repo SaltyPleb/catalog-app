@@ -8,11 +8,13 @@ const NotificationBar = () => {
     <div className="bar-wrapper">
       <div className="bar-wrapper__type">WARNING: </div>
       <div className="bar-wrapper__message">
-        {" "}
         This site is required authorization, to access all pages and
         functionality, please login
       </div>
-      <div onClick={() => user.setIsLoginNotification(false)} className="close" />
+      <div
+        onClick={() => user.setIsLoginNotification(false)}
+        className="close"
+      />
     </div>
   );
 };

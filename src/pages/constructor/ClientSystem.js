@@ -6,8 +6,11 @@ import Icon from "../../utils/Icon";
 import arrow from "../../images/static/arrow.png";
 import ComponentCards from "./ComponentCards";
 import { useLocation, useParams } from "react-router-dom";
+import DiscardSystem from "../../components/modals/DiscardSystem";
 
 const ClientSystem = observer(() => {
+  const [components, setComponents] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
   const [system, setSystem] = useState({
     title: "New Test System 2",
     components: {
@@ -39,7 +42,6 @@ const ClientSystem = observer(() => {
   });
   const { id } = useParams();
   const { device, constructor } = useContext(Context);
-  const [checked, setChecked] = useState(false);
   const [selectedType, setSelectedType] = useState(1);
   const location = useLocation();
 
@@ -47,10 +49,12 @@ const ClientSystem = observer(() => {
     fetchTypes().then((data) => device.setTypes(data));
     fetchBrands().then((data) => device.setBrands(data));
     fetchDevices().then((data) => device.setDevices(data.rows));
-  }, []);
+    setComponents(constructor.currentComponents);
+    console.log(components);
+  }, [constructor.currentComponents]);
 
-  const checkMark = () => {
-    return checked ? (
+  const checkMark = (componentName) => {
+    return componentName ? (
       <svg
         className="checkmark"
         xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +89,8 @@ const ClientSystem = observer(() => {
 
   return (
     <>
+      {/* TODO: convert to all posable modal windows */}
+      {isOpen && <DiscardSystem setIsOpen={setIsOpen} />}
       <div className="navigation">
         <div className="navigation__url">
           <h3>Client System /</h3>
@@ -99,7 +105,7 @@ const ClientSystem = observer(() => {
             <Icon name="save-a-copy" color="#8f9092" size={20} />
             <div className="c-text">Save a copy</div>
           </div>
-          <div className="c-btn">
+          <div className="c-btn" onClick={() => setIsOpen(true)}>
             <Icon name="discard" color="#8f9092" size={20} />
             <div className="c-text">Discard System</div>
           </div>
@@ -110,15 +116,18 @@ const ClientSystem = observer(() => {
           <div className="t-container">
             <div className="types">
               {device.types.map(({ id, name }, index) => (
-                <div
-                  // onClick={() => setChecked(!checked)}
-                  onClick={() => getSelected(id)}
-                  key={index}
-                  className={`type ${selectedType == id ? "selected" : null}`}
-                >
-                  <div className="status">{checkMark()}</div>
-                  <div className="type-name">{name}</div>
-                </div>
+                <>
+                  <div
+                    // onClick={() => setChecked(!checked)}
+                    onClick={() => getSelected(id)}
+                    key={index}
+                    className={`type ${selectedType == id ? "selected" : null}`}
+                  >
+                    <div className="status">{checkMark(components[id])}</div>
+                    <div className="type-name">{name}</div>
+                  </div>
+                  {components[id]}
+                </>
               ))}
             </div>
 
@@ -133,7 +142,10 @@ const ClientSystem = observer(() => {
             </div>
           </div>
 
-          <div className="c-reset">
+          <div
+            className="c-reset"
+            onClick={() => constructor.setCurrentComponents("none", "clear")}
+          >
             <Icon name="reset" color="#8f9092" size={20} />
             <div className="reset-text">Reset Components</div>
           </div>

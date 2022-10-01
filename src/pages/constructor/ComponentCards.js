@@ -1,32 +1,39 @@
 import { observer } from "mobx-react-lite";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../..";
 import { fetchOneType } from "../../http/deviceAPI";
 import Icon from "../../utils/Icon";
 
 const ComponentCards = observer(({ selectedType }) => {
-  const { device } = useContext(Context);
+  const { device, constructor } = useContext(Context);
+
   useEffect(() => {
     fetchOneType(selectedType).then((data) =>
       device.setDeviceCardsView(data.device)
     );
-  }, [selectedType]);
+  }, [selectedType, constructor]);
+
+  const setOrUpdateComponent = (component, type) => {
+    constructor.setCurrentComponents(component, type);
+    console.log(component, type)
+  }
 
   return (
     <div className="component-container">
-      {device.deviceCardsView.map(({ img, id, price, name, rating }) => (
-        <div className="component" key={id}>
+      {/* { img, id, price, name, rating } */}
+      {device.deviceCardsView.map((device) => (
+        <div className="component" key={device.id} onClick={() => setOrUpdateComponent(device, selectedType)}>
           <div className="component__header">
-            <div className="name">{name}</div>
+            <div className="name">{device.name}</div>
             <div className="rating">
               <Icon name="star" color="#605593" size={20} />
-              <div className="rating__count">{rating}</div>
+              <div className="rating__count">{device.rating}</div>
             </div>
           </div>
           <div className="component__img">
             <img
               className="image"
-              src={process.env.REACT_APP_API_VERSION_URL + img}
+              src={process.env.REACT_APP_API_VERSION_URL + device.img}
               alt=""
             />
           </div>
@@ -41,7 +48,7 @@ const ComponentCards = observer(({ selectedType }) => {
                 <Icon name="box" color="rgba(24, 181, 34, 1)" size={25} />
                 <div className="value">In Stock</div>
               </div>
-              <div className="price">$ {price}.00</div>
+              <div className="price">$ {device.price}.00</div>
             </div>
           </div>
         </div>
