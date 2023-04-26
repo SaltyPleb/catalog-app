@@ -1,0 +1,271 @@
+.library_wrapper {
+    background-color: #f3f1f4;
+    height: calc(100% - 5.1rem);
+    width: 100%;
+    position: relative;
+
+    .library_filter,
+    .systems_list {
+        position: relative;
+        display: flex;
+        padding: 2rem 3rem;
+        flex-direction: column;
+        margin-bottom: -2.5rem;
+
+        .filter_wrapper,
+        .systems_wrapper {
+            background-color: white !important;
+            padding: 1rem 1.5rem;
+
+            &__filters {
+                margin-bottom: 2.5rem;
+
+                .c-group {
+                    margin-top: 2.5rem;
+                    position: relative;
+                    gap: 2.5rem;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    display: flex;
+                    width: 100%;
+                }
+            }
+
+            &__btns {
+                display: flex;
+                gap: 1rem;
+                justify-content: flex-end;
+                margin-top: -1rem;
+
+                &>div {
+                    transition: all .3s;
+                    padding: 0.5rem 2rem;
+                    border-radius: 0.5rem;
+                    cursor: pointer;
+
+                    &:nth-child(2) {
+                        background-color: $blue-color;
+                        color: #f3f1f4;
+                    }
+
+                }
+
+                .c-btn-search:hover {
+                    background-color: #5283d2;
+                }
+
+            }
+        }
+
+    }
+
+    $base-spacing-unit: .5rem;
+    $half-spacing-unit: $base-spacing-unit / 2;
+
+    $color-alpha: #1772FF;
+    $color-form-highlight: #f8f7fb;
+
+    .systems_wrapper {
+
+        &__list {
+
+            .table {
+                width: 100%;
+                // border: 1px solid $color-form-highlight;
+
+                .table-content {
+                    border-top: none !important;
+                }
+            }
+
+            .table-header {
+                display: flex;
+                width: 100%;
+                background: transparent;
+                padding: $half-spacing-unit 0;
+            }
+
+            .table-row {
+                display: flex;
+                width: 100%;
+                padding: ($half-spacing-unit * 1.5) 0;
+                cursor: pointer;
+                transition: all .4s;
+
+                &:nth-of-type(odd) {
+                    background: $color-form-highlight;
+                }
+
+                &:hover {
+                    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+                    transform: scale(1.005);
+                }
+            }
+
+            .table-data,
+            .header__item {
+                justify-content: flex-start;
+                flex: 1 1 20%;
+                // text-align: center;
+
+                &:nth-child(1) {
+                    flex: 1 1 2%;
+                }
+
+
+                &:nth-child(2) {
+                    flex: 1 1 4%;
+                }
+
+                &:nth-child(3) {
+                    flex: 1 1 20%;
+                    padding: 0;
+                }
+
+                .creator {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 10pt;
+
+                    &__img {
+                        border-radius: 50%;
+                        background-color: #d5dbe0;
+                        height: 40px;
+                        width: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        color: #929699;
+                    }
+
+                    &__info {
+
+                        &__name {
+                            font-weight: bold;
+                        }
+
+                        &__email {
+                            cursor: pointer;
+                            color: $blue-color;
+                        }
+                    }
+                }
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .header__item {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 11pt;
+
+                a {
+                    color: $cool-gray-color !important;
+                }
+            }
+
+            .filter__link {
+                color: $dark-gray-color;
+                text-decoration: none;
+                position: relative;
+                display: inline-block;
+                padding-left: $base-spacing-unit;
+                padding-right: $base-spacing-unit;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: -($half-spacing-unit * 1.5);
+                    color: $dark-gray-color;
+                    font-size: $half-spacing-unit;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &.desc::after {
+                    content: '(desc)';
+                }
+
+                &.asc::after {
+                    content: '(asc)';
+                }
+            }
+        }
+
+        &__navigation {
+            display: flex;
+            justify-content: space-between;
+
+            .page_limit {
+                color: rgb(165, 164, 164);
+                position: relative;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-left: .5rem;
+                    margin-bottom: 3px;
+                    max-width: 12px;
+                    max-height: 12px;
+                    transform: rotate(270deg);
+                }
+            }
+
+            .pagination {
+                display: flex;
+                flex-direction: row;
+                transition: all .3s;
+                position: relative;
+                justify-content: end;
+                align-items: center;
+                gap: .3rem;
+
+                &>div {
+                    cursor: pointer;
+                }
+
+                .page,
+                .control {
+                    position: relative;
+                    border-radius: 0.5rem;
+                    height: 35px;
+                    width: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        background-color: rgba(179, 178, 178, 0.4);
+                    }
+
+                    img {
+                        max-width: 12px;
+
+                        // TODO: due to bad image need to add px to left, change to new img in future
+                        &.right {
+                            display: absolute;
+                            transform: rotate(180deg);
+                            left: -2px;
+                        }
+
+                        &.left {
+                            left: 2px;
+                        }
+                    }
+                }
+
+                .current {
+                    background-color: #3f48cc !important;
+                    color: white;
+                }
+
+            }
+        }
+    }
+
+}

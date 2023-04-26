@@ -16,7 +16,7 @@ import {
   CONTACT_ROUTE,
   SIGNIN_ROUTE,
   SIGNUP_ROUTE,
-  CATALOG_CONSTRUCTOR,
+  MAIN_CONSTRUCTOR,
   CATALOG_LIKES,
   CATALOG_HISTORY,
 } from "../../utils/consts.js";
@@ -36,7 +36,7 @@ const Navbar = observer(() => {
           width="40"
           alt="img"
         />
-        <h1 className="nav-name">Salty Salty app</h1>
+        <h1 className="nav-name">Salty PC Build App</h1>
       </NavLink>
       <Bars />
 
@@ -49,7 +49,7 @@ const Navbar = observer(() => {
                 <Link to={CATALOG_ROUTE}>Catalog</Link>
               </li>
               <li>
-                <Link to={CATALOG_CONSTRUCTOR}>Constructor</Link>
+                <Link to={MAIN_CONSTRUCTOR}>Constructor</Link>
               </li>
               <li>
                 <Link to={CATALOG_LIKES}>Favorite</Link>

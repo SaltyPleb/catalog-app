@@ -11,6 +11,10 @@
 @import "./pages/catalog/styles/catalog";
 @import "./pages/contact/contact";
 @import "./components/loader/loader";
+@import "./utils/checkbox";
+@import "./pages/constructor/settings";
+@import "./pages/constructor/systemsList";
+@import "./components/modals/discardSystemModal";
 
 html, body {
     font-family: 'Ubuntu', sans-serif;

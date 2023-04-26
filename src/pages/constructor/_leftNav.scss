@@ -61,11 +61,12 @@
 
     }
 
-    .selected {
+    .active {
         font-weight: bold;
-        background-color: #f7f6fd;
+        background-color: #f7f6fd !important;
         border-radius: 0 !important;
         width: 100% !important;
+        color: #4d8dec !important;
     }
 
     .main-wrapper {
@@ -89,6 +90,8 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                text-decoration: none !important;
+                background-color: w !important;
 
                 .user-wrap {
                     display: flex;
@@ -115,6 +118,7 @@
                 &__name {
                     font-size: 14pt;
                     font-weight: bold;
+                    color: black;
                 }
             }
         }
@@ -129,6 +133,8 @@
                 .item {
                     display: flex;
                     flex-direction: row;
+                    text-decoration: none;
+                    color: black;
                 }
             }
 

@@ -39,7 +39,16 @@ class nopage extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          position: "relative",
+          /* display: flex; */
+          width: "100%",
+          /* justify-content: space-around; */
+          /* align-items: flex-start; */
+          /* flex-wrap: nowrap; */
+        }}
+      >
         <div
           className="nopage"
           style={{
@@ -47,46 +56,46 @@ class nopage extends Component {
             textAlign: "center",
           }}
         >
-            {this.state.isLoading ? (
-              <Loader />
-            ) : (
-              <div 
+          {this.state.isLoading ? (
+            <Loader />
+          ) : (
+            <div
               style={{
                 justifyContent: "center",
                 alignItems: "center",
                 height: "90vh",
               }}
+            >
+              {/* <img
+                src={this.state.link}
+                style={{ width: "97%", height: "97%" }}
+                alt=""
+              /> */}
+              <h1
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
               >
-                <img
-                  src={this.state.link}
-                  style={{ width: "97%", height: "97%" }}
-                  alt=""
-                />
-                <h1
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                >
-                  404
-                </h1>
-                <h1
-                  style={{
-                    display: "flex",
-                    position: "absolute",
-                    top: "45%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                >
-                  Page Not Found
-                </h1>
-              </div>
-            )}
-          </div>
+                404
+              </h1>
+              <h1
+                style={{
+                  display: "flex",
+                  position: "absolute",
+                  top: "45%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                Page Not Found
+              </h1>
+            </div>
+          )}
         </div>
+      </div>
     );
   }
 }

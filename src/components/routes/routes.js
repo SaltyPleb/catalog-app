@@ -6,10 +6,14 @@ import Main from "../../pages/";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
-  CATALOG_CONSTRUCTOR,
+  MAIN_CONSTRUCTOR,
   CATALOG_HISTORY,
   CATALOG_LIKES,
   CATALOG_ROUTE,
+  CONSTRUCTOR_DASHBOARD_ROUTE,
+  CONSTRUCTOR_LIBRARY_ROUTE,
+  CONSTRUCTOR_SETTINGS_ROUTE,
+  CONSTRUCTOR_SYSTEMS_ROUTE,
   CONTACT_ROUTE,
   DEVICE_ROUTE,
   MAIN_ROUTE,
@@ -21,6 +25,11 @@ import DevicePage from "../../pages/device-page/DevicePage";
 import Admin from "../../pages/admin/Admin";
 import Favorite from "../../pages/favorite/Favorite";
 import History from "../../pages/history/History";
+import ClientSystem from "../../pages/constructor/ClientSystem";
+import Library from "../../pages/constructor/Library";
+import Settings from "../../pages/constructor/Settings";
+import Dashboard from "../../pages/constructor/Dashboard";
+import SystemsList from "../../pages/constructor/SystemsList";
 
 export const authRoutes = [
   {
@@ -56,7 +65,7 @@ export const authRoutes = [
     Component: History,
   },
   {
-    path: CATALOG_CONSTRUCTOR,
+    path: MAIN_CONSTRUCTOR,
     Component: Constructor,
   },
   {
@@ -103,7 +112,7 @@ export const publicRoutes = [
     Component: History,
   },
   {
-    path: CATALOG_CONSTRUCTOR,
+    path: MAIN_CONSTRUCTOR,
     Component: Constructor,
   },
   {
@@ -115,3 +124,26 @@ export const publicRoutes = [
     Component: Admin,
   },
 ];
+
+export const constructorRoutes = [
+  {
+    path: CONSTRUCTOR_DASHBOARD_ROUTE,
+    Component: Dashboard,
+  },
+  {
+    path: CONSTRUCTOR_SYSTEMS_ROUTE,
+    Component: SystemsList,
+  },
+  {
+    path: CONSTRUCTOR_SYSTEMS_ROUTE + "/:id",
+    Component: ClientSystem,
+  },
+  {
+    path: CONSTRUCTOR_LIBRARY_ROUTE,
+    Component: Library,
+  },
+  {
+    path: CONSTRUCTOR_SETTINGS_ROUTE,
+    Component: Settings,
+  },
+]

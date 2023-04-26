@@ -5,7 +5,17 @@ export const CONTACT_ROUTE = '/contact'
 export const SIGNUP_ROUTE = '/sign-up'
 export const SIGNIN_ROUTE = '/sign-in'
 export const MAIN_ROUTE = '/'
-export const CATALOG_CONSTRUCTOR = '/catalog/constructor'
-export const CATALOG_LIKES = '/catalog/likes'
-export const CATALOG_HISTORY = '/catalog/history'
-export const DEVICE_ROUTE = '/catalog/device'
+export const MAIN_CONSTRUCTOR = '/constructor'
+export const CATALOG_LIKES = '/likes'
+export const CATALOG_HISTORY = '/history'
+export const DEVICE_ROUTE = CATALOG_ROUTE + '/device'
+
+// Constructor routes
+
+export const CONSTRUCTOR_DASHBOARD_ROUTE = MAIN_CONSTRUCTOR + '/dashboard'
+export const CONSTRUCTOR_SYSTEMS_ROUTE = MAIN_CONSTRUCTOR + '/systems'
+export const CONSTRUCTOR_LIBRARY_ROUTE = MAIN_CONSTRUCTOR + '/library'
+export const CONSTRUCTOR_SETTINGS_ROUTE = MAIN_CONSTRUCTOR +'/settings'
+
+export const CONSTRUCTOR_NOTIFICATION_ROUTE = MAIN_CONSTRUCTOR + '/notifications'
+export const CONSTRUCTOR_TIME_TESTING_ROUTE = MAIN_CONSTRUCTOR + '/time'
